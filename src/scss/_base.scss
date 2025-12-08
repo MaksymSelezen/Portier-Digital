@@ -1,0 +1,177 @@
+/* ===========================
+   1. RESET / НОРМАЛІЗАЦІЯ
+   =========================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===========================
+   2. ЗМІННІ (КОЛЬОРИ, БРЕЙКПОІНТИ)
+   =========================== */
+
+$color-bg-main: #12121c;
+$color-text-main: #ffffff;
+$color-text-muted: #b0b0c3;
+$color-accent: #006ada;
+
+$bp-tablet: 768px;
+$bp-laptop: 1440px;
+$bp-desktop: 1920px;
+
+/* ===========================
+   3. БАЗОВА ТИПОГРАФІЯ ТА BODY
+   =========================== */
+
+body {
+  font-family: "Sora", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: $color-bg-main;
+  color: $color-text-main;
+}
+
+/* Загальний клас для сторінок: .page + модифікатор .page-home, .page-about і т.д. */
+.page {
+  min-height: 100vh;
+}
+
+/* ===========================
+   4. CONTAINER & SECTION
+   =========================== */
+
+.container {
+  width: 100%;
+  max-width: 375px; /* базова мобільна ширина */
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+/* базові відступи секцій по вертикалі */
+.section {
+  padding-block: 48px;
+}
+
+@media (min-width: $bp-tablet) {
+  .container {
+    max-width: 768px;
+    padding-inline: 24px;
+  }
+
+  .section {
+    padding-block: 64px;
+  }
+}
+
+@media (min-width: $bp-laptop) {
+  .container {
+    max-width: 1200px; // орієнтовна робоча ширина всередині 1440px, потім підженемо під макет
+    padding-inline: 32px;
+  }
+
+  .section {
+    padding-block: 80px;
+  }
+}
+
+@media (min-width: $bp-desktop) {
+  .container {
+    max-width: 1320px; // трохи ширше для 1920px, можна буде відкоригувати
+  }
+
+  .section {
+    padding-block: 96px;
+  }
+}
+
+/* ===========================
+   5. КНОПКИ (БАЗОВИЙ СТИЛЬ ДЛЯ ВСІХ)
+   =========================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 24px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  background-color: $color-accent;
+  color: #ffffff;
+
+  transition: background-color 0.2s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  background-color: lighten($color-accent, 5%);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Модифікатор на випадок, якщо десь потрібна "плоска" кнопка без тіні */
+.btn--ghost {
+  background-color: transparent;
+  color: $color-accent;
+  border: 1px solid $color-accent;
+  box-shadow: none;
+}
+
+.btn--ghost:hover {
+  background-color: rgba(0, 106, 218, 0.1);
+}
