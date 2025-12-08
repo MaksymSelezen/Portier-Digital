@@ -9,6 +9,7 @@ const sourcemaps = require("gulp-sourcemaps");
 const browserSync = require("browser-sync").create();
 const fileInclude = require("gulp-file-include");
 const del = require("del");
+const svgSprite = require("gulp-svg-sprite");
 
 const paths = {
   html: {
@@ -33,6 +34,10 @@ const paths = {
     src: "src/fonts/**/*.*",
     dest: "dist/fonts/",
   },
+  icons: {
+    src: "src/icons/svg-sprite/*.svg",
+    dest: "dist/icons/",
+  },
 };
 
 // Очищення dist
@@ -40,20 +45,17 @@ function clean() {
   return del(["dist"]);
 }
 
-// HTML (за потреби можна включати частини через @@include)
+// HTML (інклуди через @@include)
 function html() {
-  return (
-    src(paths.html.src)
-      // Якщо захочеш використовувати інклуди:
-      .pipe(
-        fileInclude({
-          prefix: "@@",
-          basepath: "@file",
-        })
-      )
-      .pipe(dest(paths.html.dest))
-      .pipe(browserSync.stream())
-  );
+  return src(paths.html.src)
+    .pipe(
+      fileInclude({
+        prefix: "@@",
+        basepath: "@file",
+      })
+    )
+    .pipe(dest(paths.html.dest))
+    .pipe(browserSync.stream());
 }
 
 // SCSS -> CSS
@@ -80,7 +82,6 @@ function styles() {
 function scripts() {
   return (
     src(paths.scripts.src)
-      // Якщо потрібні сорсмапи для JS, розкоментуй:
       // .pipe(sourcemaps.init())
       .pipe(terser())
       // .pipe(sourcemaps.write('.'))
@@ -99,6 +100,21 @@ function fonts() {
   return src(paths.fonts.src).pipe(dest(paths.fonts.dest));
 }
 
+// SVG sprite
+function sprite() {
+  return src(paths.icons.src)
+    .pipe(
+      svgSprite({
+        mode: {
+          symbol: {
+            sprite: "../sprite.svg", // у підсумку: dist/icons/sprite.svg
+          },
+        },
+      })
+    )
+    .pipe(dest(paths.icons.dest));
+}
+
 // Локальний сервер + watcher
 function serve() {
   browserSync.init({
@@ -106,7 +122,7 @@ function serve() {
       baseDir: "dist",
     },
     notify: false,
-    open: false, // якщо хочеш, щоб браузер сам не відкривався
+    open: false, // щоб браузер сам не відкривався
   });
 
   watch(paths.html.watch, html);
@@ -114,9 +130,13 @@ function serve() {
   watch(paths.scripts.src, scripts);
   watch(paths.images.src, images);
   watch(paths.fonts.src, fonts);
+  watch(paths.icons.src, sprite); // при зміні SVG перезбираємо спрайт
 }
 
-const build = series(clean, parallel(html, styles, scripts, images, fonts));
+const build = series(
+  clean,
+  parallel(html, styles, scripts, images, fonts, sprite)
+);
 
 exports.clean = clean;
 exports.html = html;
@@ -124,6 +144,7 @@ exports.styles = styles;
 exports.scripts = scripts;
 exports.images = images;
 exports.fonts = fonts;
+exports.sprite = sprite;
 exports.build = build;
 exports.dev = series(build, serve);
 exports.default = exports.dev;
