@@ -54,10 +54,12 @@ img {
 
 $color-bg-main: #12121c;
 $color-text-main: #ffffff;
-$color-text-muted: #b0b0c3;
+$color-text-muted: #88888d;
 $color-accent: #006ada;
 
+$bp-mobile-lg: 414px;
 $bp-tablet: 768px;
+$bp-laptop-md: 1024px;
 $bp-laptop: 1440px;
 $bp-desktop: 1920px;
 
@@ -72,7 +74,6 @@ body {
   color: $color-text-main;
 }
 
-/* Загальний клас для сторінок: .page + модифікатор .page-home, .page-about і т.д. */
 .page {
   min-height: 100vh;
 }
@@ -81,20 +82,22 @@ body {
 
 .container {
   width: 100%;
-  max-width: 375px; /* базова мобільна ширина */
   margin-inline: auto;
+  max-width: 375px;
   padding-inline: 16px;
 }
 
-/* базові відступи секцій по вертикалі */
-.section {
-  padding-block: 48px;
+@media (min-width: $bp-mobile-lg) {
+  .container {
+    max-width: $bp-mobile-lg;
+    padding-inline: 40px;
+  }
 }
 
 @media (min-width: $bp-tablet) {
   .container {
-    max-width: 768px;
-    padding-inline: 24px;
+    max-width: $bp-tablet;
+    padding-inline: 60px;
   }
 
   .section {
@@ -102,10 +105,10 @@ body {
   }
 }
 
-@media (min-width: $bp-laptop) {
+@media (min-width: $bp-laptop-md) {
   .container {
-    max-width: 1200px; // орієнтовна робоча ширина всередині 1440px, потім підженемо під макет
-    padding-inline: 32px;
+    max-width: $bp-laptop-md;
+    padding-inline: 90px;
   }
 
   .section {
@@ -113,9 +116,10 @@ body {
   }
 }
 
-@media (min-width: $bp-desktop) {
+@media (min-width: $bp-laptop) {
   .container {
-    max-width: 1320px; // трохи ширше для 1920px, можна буде відкоригувати
+    max-width: $bp-laptop;
+    padding-inline: 90px;
   }
 
   .section {
@@ -123,47 +127,50 @@ body {
   }
 }
 
+@media (min-width: $bp-desktop) {
+  .container {
+    max-width: $bp-desktop;
+    padding-inline: 330px;
+  }
+}
+
+.section {
+  padding-block: 48px;
+}
+
 // * ========== BUTTONS ==========
 
 // * ========== HEADER ==========
 
-// мобільна версія 375px
-
 .header {
   background-color: $color-bg-main;
-  padding-block: 25px; // відступи зверху/знизу як у макеті
+  padding-block: 25px;
 }
 
 .header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  // у макеті від краю екрана до логотипу ~32px
-  padding-inline: 32px;
 }
-
-/* Лого */
 
 .header__logo {
   display: inline-flex;
   align-items: center;
-  column-gap: 8px;
+  column-gap: 12px;
+  max-width: 115px;
 }
 
 .header__logo-icon {
-  width: 32px;
-  height: 32px;
+  width: 23px;
+  height: 28px;
   flex-shrink: 0;
 }
 
 .header__logo-text {
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 1.2;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
 }
-
-/* Бургер */
 
 .header__burger {
   display: inline-flex;
@@ -172,12 +179,89 @@ body {
 }
 
 .header__burger-icon {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 18px;
 }
-
-/* Десктопне меню на мобілці приховане */
 
 .header__nav {
   display: none;
+}
+
+@media (min-width: $bp-tablet) {
+  .header__burger {
+    display: none;
+  }
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .header__nav-list {
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+    margin-right: 40px;
+  }
+
+  .header__nav-link {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 14px;
+    color: $color-text-muted;
+    transition: color 0.2s ease;
+  }
+
+  .header__nav-link:hover,
+  .header__nav-link:focus-visible {
+    color: $color-text-main;
+  }
+
+  .header__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+
+    padding-inline: 24px;
+    padding-block: 14px;
+
+    border-radius: 8px;
+    background: #223;
+  }
+}
+
+@media (min-width: $bp-laptop-md) {
+  .header {
+    padding-block: 20px;
+  }
+
+  .header__inner {
+    padding-left: 99px;
+  }
+
+  .header__logo-icon {
+    width: 27px;
+    height: 33px;
+  }
+
+  .header__logo-text {
+    font-weight: 700;
+    font-size: 27px;
+  }
+
+  .header__logo {
+    column-gap: 17px;
+    max-width: 141px;
+  }
+}
+
+@media (min-width: $bp-laptop) {
+  .header {
+    padding-top: 26px;
+    padding-bottom: 22px;
+  }
 }
