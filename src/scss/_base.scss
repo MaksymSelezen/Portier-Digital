@@ -198,6 +198,8 @@ body {
     font-family: "DM Sans", sans-serif;
     font-weight: 700;
     font-size: 14px;
+    color: $color-text-main;
+
     padding-inline: 24px;
     padding-block: 14px;
     border-radius: 8px;
@@ -222,7 +224,7 @@ body {
     padding-block: 20px;
 
     &__inner {
-      padding-left: 99px;
+      padding-left: 9px;
     }
 
     &__logo {
