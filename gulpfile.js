@@ -92,12 +92,16 @@ function scripts() {
 
 // Копіювання зображень
 function images() {
-  return src(paths.images.src).pipe(dest(paths.images.dest));
+  return src(paths.images.src, { encoding: false })
+    .pipe(dest(paths.images.dest))
+    .pipe(browserSync.stream());
 }
 
 // Копіювання шрифтів
 function fonts() {
-  return src(paths.fonts.src).pipe(dest(paths.fonts.dest));
+  return src(paths.fonts.src, { encoding: false, allowEmpty: true })
+    .pipe(dest(paths.fonts.dest))
+    .pipe(browserSync.stream());
 }
 
 // SVG sprite
