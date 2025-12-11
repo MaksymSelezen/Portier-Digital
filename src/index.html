@@ -13,19 +13,97 @@
     />
 
     <link rel="stylesheet" href="./css/main.css" />
-
-    <!-- Пізніше тут підключимо main.css -->
   </head>
   <body class="page page-home">
     @@include('partials/header.html')
 
     <main>
-      <!-- Hero Home -->
-      <!-- Projects Section -->
-      <!-- About Section -->
-      <!-- Reviews Section -->
-      <!-- Stats Section -->
-      <!-- Mission Section -->
+      <section class="hero-home">
+        <div class="container hero-home__inner">
+          <div class="hero-home__intro">
+            <h1 class="hero-home__title">
+              Digital
+              <span class="hero-home__title-accent">Product</span> Designer<span
+                class="hero-home__title-dot"
+                >.</span
+              >
+            </h1>
+
+            <p class="hero-home__subtitle">
+              I am Portier, experienced Digital Product Designer based on
+              Florida.<br />
+              I am here to help you build your amazing product.
+            </p>
+
+            <button class="hero-home__btn" type="button">Hire Me</button>
+          </div>
+
+          <ul class="hero-home__services">
+            <!-- Card 1 -->
+            <li class="hero-home__service">
+              <div class="hero-home__icon">
+                <svg
+                  class="hero-home__icon-svg hero-home__icon-svg--hashtag"
+                  width="13"
+                  height="13"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <use href="./icons/sprite.svg#hashtag"></use>
+                </svg>
+              </div>
+
+              <h3 class="hero-home__service-title">UI-X Design</h3>
+              <p class="hero-home__service-text">
+                The time that leads to mastery is dependent on the intensity of
+                our focus.
+              </p>
+            </li>
+
+            <!-- Card 2 -->
+            <li class="hero-home__service hero-home__service--background">
+              <div class="hero-home__icon hero-home__icon--green">
+                <svg
+                  class="hero-home__icon-svg hero-home__icon-svg--square"
+                  width="13"
+                  height="13"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <use href="./icons/sprite.svg#square"></use>
+                </svg>
+              </div>
+
+              <h3 class="hero-home__service-title">Product Design</h3>
+              <p class="hero-home__service-text">
+                The time that leads to mastery is dependent on the intensity of
+                our focus.
+              </p>
+            </li>
+
+            <!-- Card 3 -->
+            <li class="hero-home__service">
+              <div class="hero-home__icon">
+                <svg
+                  class="hero-home__icon-svg hero-home__icon-svg--letters"
+                  width="15"
+                  height="18"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <use href="./icons/sprite.svg#letters"></use>
+                </svg>
+              </div>
+
+              <h3 class="hero-home__service-title">Writing</h3>
+              <p class="hero-home__service-text">
+                The time that leads to mastery is dependent on the intensity of
+                our focus.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
 
       @@include('partials/cta.html')
     </main>

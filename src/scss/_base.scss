@@ -56,6 +56,7 @@ $color-bg-main: #12121c;
 $color-text-main: #ffffff;
 $color-text-muted: #88888d;
 $color-accent: #006ada;
+$color-accent-dot: #57efb4;
 
 $bp-mobile-lg: 414px;
 $bp-tablet: 768px;
@@ -98,7 +99,6 @@ body {
   }
 
   @media (min-width: $bp-laptop-md) {
-    // padding-inline: 90px;
     padding-right: 90px;
     padding-left: 99px;
   }
