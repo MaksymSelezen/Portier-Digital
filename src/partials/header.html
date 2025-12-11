@@ -1,61 +1,111 @@
 <header class="header">
-  <div class="container">
-    <div class="header__inner">
-      <a href="./index.html" class="header__logo">
-        <svg
-          class="header__logo-icon"
-          width="23"
-          height="28"
-          aria-hidden="true"
-        >
-          <use href="./icons/sprite.svg#portier"></use>
-        </svg>
-        <span class="header__logo-text">Portier</span>
-      </a>
+  <div class="container header__inner">
+    <a href="./index.html" class="header__logo">
+      <svg class="header__logo-icon" width="23" height="28" aria-hidden="true">
+        <use href="./icons/sprite.svg#portier"></use>
+      </svg>
+      <span class="header__logo-text">Portier</span>
+    </a>
+
+    <button
+      class="header__burger"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      data-menu-open
+    >
+      <svg
+        class="header__burger-icon"
+        width="24"
+        height="24"
+        aria-hidden="true"
+      >
+        <use href="./icons/sprite.svg#burger"></use>
+      </svg>
+    </button>
+
+    <nav class="header__nav" aria-label="Main navigation">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a
+            href="./portfolio.html"
+            class="header__nav-link header__nav-link--current"
+          >
+            Portfolio
+          </a>
+        </li>
+        <li class="header__nav-item">
+          <a href="./about.html" class="header__nav-link">About Me</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="./blog.html" class="header__nav-link">Blog</a>
+        </li>
+      </ul>
 
       <button
-        class="header__burger"
+        class="header__btn"
         type="button"
-        aria-label="Open navigation"
-        aria-expanded="false"
-        aria-controls="main-nav"
+        aria-label="Open template request form"
       >
-        <svg
-          class="header__burger-icon"
-          width="24"
-          height="24"
-          aria-hidden="true"
-        >
-          <use href="./icons/sprite.svg#burger"></use>
-        </svg>
+        Get Template
       </button>
-
-      <nav class="header__nav" id="main-nav" aria-label="Main navigation">
-        <ul class="header__nav-list">
-          <li class="header__nav-item">
-            <a
-              href="./portfolio.html"
-              class="header__nav-link header__nav-link--current"
-            >
-              Portfolio
-            </a>
-          </li>
-          <li class="header__nav-item">
-            <a href="./about.html" class="header__nav-link">About Me</a>
-          </li>
-          <li class="header__nav-item">
-            <a href="./blog.html" class="header__nav-link">Blog</a>
-          </li>
-        </ul>
-
-        <button
-          class="header__btn"
-          type="button"
-          aria-label="Open template request form"
-        >
-          Get Template
-        </button>
-      </nav>
-    </div>
+    </nav>
   </div>
 </header>
+
+<!-- Мобільне меню -->
+<div
+  class="mobile-menu"
+  id="mobile-menu"
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  data-menu
+>
+  <div class="mobile-menu__backdrop" data-menu-close></div>
+
+  <div class="mobile-menu__content">
+    <button
+      class="mobile-menu__close"
+      type="button"
+      aria-label="Close navigation"
+      data-menu-close
+    >
+      ×
+    </button>
+
+    <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+      <ul class="mobile-menu__nav-list">
+        <li class="mobile-menu__nav-item">
+          <a
+            href="./portfolio.html"
+            class="mobile-menu__nav-link"
+            data-menu-link
+          >
+            Portfolio
+          </a>
+        </li>
+        <li class="mobile-menu__nav-item">
+          <a href="./about.html" class="mobile-menu__nav-link" data-menu-link>
+            About Me
+          </a>
+        </li>
+        <li class="mobile-menu__nav-item">
+          <a href="./blog.html" class="mobile-menu__nav-link" data-menu-link>
+            Blog
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <button
+      class="mobile-menu__btn"
+      type="button"
+      aria-label="Open template request form in mobile"
+      data-menu-close
+    >
+      Get Template
+    </button>
+  </div>
+</div>

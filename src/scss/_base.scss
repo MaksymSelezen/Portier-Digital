@@ -78,6 +78,10 @@ body {
   min-height: 100vh;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 // * ========== CONTAINER & SECTION ==========
 
 .container {
@@ -94,7 +98,9 @@ body {
   }
 
   @media (min-width: $bp-laptop-md) {
-    padding-inline: 90px;
+    // padding-inline: 90px;
+    padding-right: 90px;
+    padding-left: 99px;
   }
 
   @media (min-width: $bp-laptop) {
@@ -134,7 +140,6 @@ body {
     justify-content: space-between;
   }
 
-  // Лого
   &__logo {
     display: inline-flex;
     align-items: center;
@@ -154,7 +159,6 @@ body {
     }
   }
 
-  // Бургер
   &__burger {
     display: inline-flex;
     align-items: center;
@@ -166,7 +170,6 @@ body {
     }
   }
 
-  // Навігація
   &__nav {
     display: none;
 
@@ -206,7 +209,7 @@ body {
     background: #223;
   }
 
-  // TABLET + DESKTOP (від 768px)
+  // 768
   @media (min-width: $bp-tablet) {
     &__burger {
       display: none;
@@ -219,13 +222,9 @@ body {
     }
   }
 
-  // 1024px — під макет 1024
+  // 1024px
   @media (min-width: $bp-laptop-md) {
     padding-block: 20px;
-
-    &__inner {
-      padding-left: 9px;
-    }
 
     &__logo {
       column-gap: 17px;
@@ -243,20 +242,16 @@ body {
     }
   }
 
-  // 1440px — макет 1440
+  // 1440px
   @media (min-width: $bp-laptop) {
     padding-top: 26px;
     padding-bottom: 22px;
   }
 
-  // 1920px — XL-адаптив
+  // 1920px
   @media (min-width: $bp-desktop) {
     padding-top: 32px;
     padding-bottom: 28px;
-
-    &__inner {
-      padding-left: 0;
-    }
 
     &__logo {
       column-gap: 20px;
@@ -286,6 +281,93 @@ body {
       padding-inline: 32px;
       padding-block: 16px;
       border-radius: 10px;
+    }
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: none;
+  background-color: rgba(5, 5, 15, 0.98);
+
+  &--open {
+    display: block;
+  }
+
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    padding: 24px 16px 32px;
+  }
+
+  &__close {
+    align-self: flex-end;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: $color-text-main;
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+  &__nav {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+
+  &__nav-link {
+    font-weight: 700;
+    font-size: 18px;
+    color: $color-text-main;
+    text-decoration: none;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding-block: 14px;
+    border-radius: 8px;
+
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: $color-text-main;
+    background: #223;
+
+    margin-top: 50px;
+  }
+
+  @media (min-width: $bp-tablet) {
+    display: none;
+
+    &--open {
+      display: none;
     }
   }
 }
