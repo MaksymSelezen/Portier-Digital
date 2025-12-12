@@ -235,6 +235,57 @@
         </div>
       </section>
 
+      <!-- ========== ABOUT ========== -->
+      <section class="about section" id="about">
+        <div class="container about__container">
+          <div class="about__inner">
+            <div class="about__content">
+              <h2 class="about__title">
+                I build products <br />
+                for companies &amp; startups.
+              </h2>
+
+              <p class="about__text">
+                Everything in nature has a structure, a way that the parts
+                relate to one another, which is generally fluid and not so easy
+                to conceptualize.
+              </p>
+
+              <p class="about__text">
+                Everything in nature has a structure, a way that the parts
+                relate to one another, which is generally fluid and not so easy
+                to conceptualize.
+              </p>
+            </div>
+
+            <picture class="about__picture">
+              <source
+                srcset="./images/about/laptop-1440.png"
+                media="(min-width: 1440px)"
+              />
+              <source
+                srcset="./images/about/laptop-1024.png"
+                media="(min-width: 1024px)"
+              />
+              <source
+                srcset="./images/about/laptop-1024.png"
+                media="(min-width: 768px)"
+              />
+
+              <img
+                class="about__image"
+                src="./images/about/laptop.png"
+                width="350"
+                height="400"
+                alt="Minimal workspace with a computer and a laptop"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
       @@include('partials/cta.html')
     </main>
 
