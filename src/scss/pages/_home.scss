@@ -322,57 +322,68 @@
 }
 
 // * ========== PROJECTS ==========
+
 .projects {
-  padding: 45px 0 60px;
-  background-color: $color-bg-main;
-
-  &__list {
-    display: flex;
-    flex-direction: column;
-    row-gap: 50px;
+  &__container {
+    padding-block: 45px;
+    padding-inline: 32px;
   }
-}
 
-.project-card {
-  position: relative;
-  max-width: 350px;
-  margin: 0 auto;
-  border-radius: 16px;
-  overflow: hidden;
-  background-color: #111;
+  &__item {
+    margin-bottom: 50px;
 
-  &__image {
-    display: block;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__card {
     width: 100%;
-    height: auto;
+    max-width: 350px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
   }
 
-  &__info {
+  &__card-link {
+    position: relative;
+    display: block;
+  }
+
+  &__card-meta {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 276px;
-    min-height: 68px;
-    padding: 10px 15px;
+
+    width: calc(100% - 74px);
+    max-width: 276px;
+
     display: flex;
     align-items: center;
+
+    padding: 10px 15px;
 
     background-color: #223;
     border-radius: 0 8px 0 0;
   }
 
-  &__title {
+  &__card-title {
     font-family: "Sora", sans-serif;
     font-weight: 600;
     font-size: 14px;
     line-height: 1.714;
-    color: #fff;
+    max-width: 246px;
   }
 
-  &__btn {
+  &__card-title-suffix {
+    white-space: nowrap;
+  }
+
+  &__card-btn {
     position: absolute;
     right: 15px;
     bottom: 15px;
+
     width: 44px;
     height: 44px;
 
@@ -382,12 +393,156 @@
 
     border-radius: 8px;
     background-color: #223;
+
+    &--green {
+      background-color: #57efb4;
+
+      .projects__card-btn-icon {
+        stroke: #12121c;
+      }
+    }
   }
 
-  &__btn-icon {
-    width: 16px;
-    height: 16px;
-    fill: none;
+  &__card-btn-icon {
+    width: 9px;
+    height: 9px;
     stroke: #fff;
+  }
+}
+
+// 768
+@media (min-width: 768px) {
+  .projects {
+    &__container {
+      padding-block: 60px;
+      padding-inline: 48px;
+    }
+
+    &__item {
+      margin-bottom: 56px;
+    }
+
+    &__card {
+      max-width: 640px;
+    }
+
+    &__card-meta {
+      width: auto;
+      max-width: 380px;
+      padding: 12px 18px;
+    }
+
+    &__card-title {
+      max-width: 330px;
+    }
+  }
+}
+
+// 1024
+@media (min-width: 1024px) {
+  .projects {
+    &__container {
+      padding-block: 100px;
+      padding-inline: 90px;
+    }
+
+    &__item {
+      margin-bottom: 90px;
+    }
+
+    &__card {
+      max-width: 844px;
+    }
+
+    &__card-meta {
+      left: 30px;
+      bottom: 30px;
+
+      width: auto;
+      max-width: none;
+
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    &__card-title {
+      max-width: none;
+    }
+
+    &__card-title-suffix {
+      display: none;
+    }
+
+    &__card-btn {
+      right: 30px;
+      bottom: 30px;
+    }
+  }
+}
+
+// 1440
+@media (min-width: 1440px) {
+  .projects {
+    &__container {
+      padding-block: 120px;
+      padding-inline: 90px;
+    }
+
+    &__item {
+      margin-bottom: 80px;
+    }
+
+    &__card {
+      max-width: 1260px;
+    }
+
+    &__card-meta {
+      left: 40px;
+      bottom: 40px;
+
+      width: auto;
+      max-width: none;
+    }
+
+    &__card-btn {
+      right: 40px;
+      bottom: 40px;
+    }
+  }
+}
+
+// 1920
+@media (min-width: 1920px) {
+  .projects {
+    &__container {
+      padding-block: 160px;
+      padding-inline: 120px;
+    }
+
+    &__card {
+      max-width: 1260px;
+    }
+
+    &__item {
+      margin-bottom: 90px;
+    }
+
+    &__card-title {
+      font-size: 18px;
+    }
+
+    &__card-meta {
+      padding: 30px;
+
+      left: 50px;
+      bottom: 50px;
+    }
+
+    &__card-btn {
+      min-width: 60px;
+      min-height: 60px;
+      right: 50px;
+      bottom: 50px;
+    }
   }
 }
