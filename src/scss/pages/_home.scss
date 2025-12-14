@@ -720,3 +720,276 @@
     }
   }
 }
+
+// * ========== REVIEWS ==========
+.reviews {
+  padding-block: clamp(45px, 10vw, 64px);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top {
+    max-width: 40ch;
+  }
+
+  &__title {
+    max-width: 18ch;
+
+    font-size: 32px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: $color-text-main;
+
+    margin-bottom: 16px;
+  }
+
+  &__lead,
+  &__text {
+    font-family: "Sora", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71429;
+    color: $color-text-muted;
+  }
+
+  &__lead {
+    margin-bottom: 45px;
+  }
+
+  &__text {
+    margin-bottom: 60px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__card {
+    --avatar-size: 44px;
+    --avatar-gap: 24px;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__card--featured {
+    background: #222233;
+    border-radius: 8px;
+  }
+
+  &__card-head {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--avatar-gap);
+  }
+
+  &__avatar {
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    border-radius: 50%;
+    object-fit: cover;
+
+    flex: 0 0 var(--avatar-size);
+  }
+
+  &__quote {
+    margin: 0;
+    flex: 1 1 auto;
+  }
+
+  &__quote-text {
+    margin-bottom: 30px;
+
+    font-family: "Sora", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71429;
+    color: $color-text-muted;
+  }
+
+  &__card-foot {
+    margin-left: calc(var(--avatar-size) + var(--avatar-gap));
+  }
+
+  &__name {
+    margin: 0 0 4px;
+
+    font-family: "Sora", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: $color-text-main;
+    white-space: nowrap;
+  }
+
+  &__position {
+    margin: 0;
+
+    font-family: "Sora", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.71429;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  // 768
+  @media (min-width: 768px) {
+    padding-block: 64px;
+
+    &__container {
+      padding-inline: 40px;
+      display: grid;
+      grid-template-columns: minmax(300px, 1fr) minmax(320px, 420px);
+      column-gap: clamp(32px, 5vw, 64px);
+      align-items: start;
+    }
+
+    &__top {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      max-width: 44ch;
+    }
+
+    &__lead {
+      margin-bottom: 0;
+    }
+
+    &__text {
+      margin-top: auto;
+      margin-bottom: 0;
+      max-width: 38ch;
+    }
+
+    &__list {
+      justify-self: end;
+      width: 100%;
+      max-width: 420px;
+      gap: 24px;
+    }
+  }
+
+  // 1024
+  @media (min-width: 1024px) {
+    padding-block: 100px;
+    padding-left: 90px;
+    padding-right: 90px;
+
+    &__container {
+      grid-template-columns: 333px 438px;
+      column-gap: 73px;
+      align-items: start;
+      padding-inline: 0;
+    }
+
+    &__list {
+      width: 438px;
+      justify-self: start;
+      gap: 30px;
+    }
+
+    &__title {
+      max-width: 333px;
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    &__lead,
+    &__text {
+      max-width: 333px;
+    }
+  }
+
+  // 1440
+  @media (min-width: 1440px) {
+    padding-block: 120px;
+
+    &__container {
+      display: grid;
+      grid-template-columns: 646px 438px;
+      column-gap: 176px;
+    }
+
+    &__top {
+      max-width: 646px;
+    }
+
+    &__title {
+      max-width: 646px;
+      font-size: 48px;
+      line-height: 1.16667;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    &__lead,
+    &__text {
+      max-width: 531px;
+    }
+
+    &__quote-text {
+      margin-bottom: 24px;
+    }
+
+    &__list {
+      width: 438px;
+      justify-self: start;
+      gap: 39px;
+    }
+  }
+
+  // 1920
+  @media (min-width: 1920px) {
+    padding-block: 140px;
+
+    &__container {
+      padding-inline: clamp(90px, 6vw, 160px);
+
+      grid-template-columns: 646px 520px;
+      column-gap: clamp(176px, 8vw, 260px);
+      align-items: start;
+    }
+
+    &__top {
+      max-width: 646px;
+    }
+
+    &__lead,
+    &__text {
+      max-width: 560px;
+    }
+
+    &__list {
+      width: 520px;
+      gap: 48px;
+      justify-self: start;
+    }
+
+    &__card {
+      padding: 28px;
+    }
+
+    &__quote-text {
+      margin-bottom: 28px;
+    }
+
+    &__name {
+      font-size: 28px;
+    }
+
+    &__position {
+      font-size: 14px;
+    }
+  }
+}
