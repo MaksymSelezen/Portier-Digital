@@ -894,7 +894,7 @@
     }
 
     &__list {
-      width: 438px;
+      max-width: 438px;
       justify-self: start;
       gap: 30px;
     }
