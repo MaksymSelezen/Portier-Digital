@@ -10,12 +10,13 @@
   }
 
   &__title {
+    margin-bottom: 16px;
+
     font-weight: 700;
     font-size: 40px;
     line-height: 1.2;
     letter-spacing: -0.02em;
     color: $color-text-main;
-    margin-bottom: 16px;
 
     &-accent {
       color: $color-text-muted;
@@ -28,11 +29,12 @@
 
   &__subtitle {
     max-width: 350px;
+    margin-bottom: 32px;
+
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
     color: $color-text-muted;
-    margin-bottom: 32px;
   }
 
   &__btn {
@@ -42,8 +44,8 @@
     color: $color-text-main;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     width: 100%;
     max-width: 350px;
@@ -67,7 +69,7 @@
     }
 
     &--background {
-      background-color: #223;
+      background-color: $color-surface;
     }
   }
 
@@ -75,7 +77,7 @@
     width: 44px;
     height: 44px;
     border-radius: 8px;
-    background-color: #223;
+    background-color: $color-surface;
 
     display: inline-flex;
     align-items: center;
@@ -84,7 +86,7 @@
     margin-bottom: 24px;
 
     &--green {
-      background-color: #57efb4;
+      background-color: $color-accent-dot;
     }
   }
 
@@ -92,10 +94,10 @@
     display: block;
     width: 13px;
     height: 13px;
-    fill: #ffffff;
+    fill: $color-text-main;
 
     &--square {
-      fill: #12121c;
+      fill: $color-bg-main;
     }
 
     &--letters {
@@ -129,14 +131,12 @@
 
     &__title {
       font-size: 52px;
-      width: auto;
       max-width: 802px;
       margin-bottom: 0;
     }
 
     &__subtitle {
       font-size: 20px;
-      width: auto;
       max-width: 520px;
     }
 
@@ -181,10 +181,6 @@
   @media (min-width: $bp-laptop-md) {
     padding: 95px 90px;
 
-    &__inner {
-      max-width: none;
-    }
-
     &__title {
       font-size: 64px;
       max-width: 845px;
@@ -225,7 +221,6 @@
     &__title {
       font-size: 72px;
       max-width: 903px;
-      margin-bottom: 16px;
     }
 
     &__subtitle {
@@ -362,7 +357,7 @@
 
     padding: 10px 15px;
 
-    background-color: #223;
+    background-color: $color-surface;
     border-radius: 0 8px 0 0;
   }
 
@@ -391,13 +386,13 @@
     justify-content: center;
 
     border-radius: 8px;
-    background-color: #223;
+    background-color: $color-surface;
 
     &--green {
-      background-color: #57efb4;
+      background-color: $color-accent-dot;
 
       .projects__card-btn-icon {
-        stroke: #12121c;
+        stroke: $color-bg-main;
       }
     }
   }
@@ -405,13 +400,11 @@
   &__card-btn-icon {
     width: 9px;
     height: 9px;
-    stroke: #fff;
+    stroke: $color-text-main;
   }
-}
 
-// 768
-@media (min-width: 768px) {
-  .projects {
+  // 768
+  @media (min-width: $bp-tablet) {
     &__container {
       padding-block: 60px;
       padding-inline: 48px;
@@ -435,11 +428,9 @@
       max-width: 330px;
     }
   }
-}
 
-// 1024
-@media (min-width: 1024px) {
-  .projects {
+  // 1024
+  @media (min-width: $bp-laptop-md) {
     &__container {
       padding-block: 100px;
       padding-inline: 90px;
@@ -457,9 +448,7 @@
       left: 30px;
       bottom: 30px;
 
-      width: auto;
       max-width: none;
-
       border-radius: 8px;
       padding: 20px;
     }
@@ -477,11 +466,9 @@
       bottom: 30px;
     }
   }
-}
 
-// 1440
-@media (min-width: 1440px) {
-  .projects {
+  // 1440
+  @media (min-width: $bp-laptop) {
     &__container {
       padding-block: 120px;
       padding-inline: 90px;
@@ -498,9 +485,6 @@
     &__card-meta {
       left: 40px;
       bottom: 40px;
-
-      width: auto;
-      max-width: none;
     }
 
     &__card-btn {
@@ -508,22 +492,20 @@
       bottom: 40px;
     }
   }
-}
 
-// 1920
-@media (min-width: 1920px) {
-  .projects {
+  // 1920
+  @media (min-width: $bp-desktop) {
     &__container {
       padding-block: 160px;
       padding-inline: 120px;
     }
 
-    &__card {
-      max-width: 1260px;
-    }
-
     &__item {
       margin-bottom: 90px;
+    }
+
+    &__card {
+      max-width: 1260px;
     }
 
     &__card-title {
@@ -532,14 +514,13 @@
 
     &__card-meta {
       padding: 30px;
-
       left: 50px;
       bottom: 50px;
     }
 
     &__card-btn {
-      min-width: 60px;
-      min-height: 60px;
+      width: 60px;
+      height: 60px;
       right: 50px;
       bottom: 50px;
     }
@@ -547,6 +528,7 @@
 }
 
 // * ========== ABOUT ==========
+
 .about {
   padding-block: 45px;
 
@@ -567,10 +549,6 @@
     font-size: 14px;
     line-height: 1.71429;
     color: $color-text-muted;
-
-    &--second {
-      margin-bottom: 48px;
-    }
 
     & + & {
       margin-top: 16px;
@@ -615,10 +593,6 @@
     &__text {
       font-size: 14px;
       line-height: 1.75;
-
-      &--second {
-        margin-bottom: 0;
-      }
     }
 
     &__picture {
@@ -636,13 +610,10 @@
     padding-block: 100px;
 
     &__container {
-      padding-left: 90px;
-      padding-right: 90px;
+      padding-inline: 90px;
     }
 
     &__inner {
-      display: flex;
-      align-items: center;
       flex-wrap: nowrap;
       gap: 30px;
     }
@@ -691,13 +662,13 @@
 
   // 1920
   @media (min-width: $bp-desktop) {
+    &__inner {
+      gap: 150px;
+    }
+
     &__content {
       flex: 0 0 640px;
       max-width: 640px;
-    }
-
-    &__inner {
-      gap: 150px;
     }
 
     &__title {
@@ -722,6 +693,7 @@
 }
 
 // * ========== REVIEWS ==========
+
 .reviews {
   padding-block: clamp(45px, 10vw, 64px);
 
@@ -766,10 +738,6 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-
-    margin: 0;
-    padding: 0;
-    list-style: none;
   }
 
   &__card {
@@ -783,7 +751,7 @@
   }
 
   &__card--featured {
-    background: #222233;
+    background: $color-surface;
     border-radius: 8px;
   }
 
@@ -844,11 +812,12 @@
   }
 
   // 768
-  @media (min-width: 768px) {
+  @media (min-width: $bp-tablet) {
     padding-block: 64px;
 
     &__container {
       padding-inline: 40px;
+
       display: grid;
       grid-template-columns: minmax(300px, 1fr) minmax(320px, 420px);
       column-gap: clamp(32px, 5vw, 64px);
@@ -881,15 +850,13 @@
   }
 
   // 1024
-  @media (min-width: 1024px) {
+  @media (min-width: $bp-laptop-md) {
     padding-block: 100px;
-    padding-left: 90px;
-    padding-right: 90px;
+    padding-inline: 90px;
 
     &__container {
       grid-template-columns: 333px 438px;
       column-gap: 73px;
-      align-items: start;
       padding-inline: 0;
     }
 
@@ -912,11 +879,10 @@
   }
 
   // 1440
-  @media (min-width: 1440px) {
+  @media (min-width: $bp-laptop) {
     padding-block: 120px;
 
     &__container {
-      display: grid;
       grid-template-columns: 646px 438px;
       column-gap: 176px;
     }
@@ -950,19 +916,13 @@
   }
 
   // 1920
-  @media (min-width: 1920px) {
+  @media (min-width: $bp-desktop) {
     padding-block: 140px;
 
     &__container {
       padding-inline: clamp(90px, 6vw, 160px);
-
       grid-template-columns: 646px 520px;
-      column-gap: clamp(420px, 8vw, 260px);
-      align-items: start;
-    }
-
-    &__top {
-      max-width: 646px;
+      column-gap: 260px;
     }
 
     &__lead,
@@ -995,6 +955,7 @@
 }
 
 // * ========== STATS ==========
+
 .stats {
   padding-block: 45px;
 
@@ -1070,115 +1031,112 @@
   }
 
   // 1024
-  @media (min-width: 1024px) {
+  @media (min-width: $bp-laptop-md) {
     padding-block: 117px;
 
-    .stats {
-      &__container {
-        padding-inline: 90px;
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        align-items: center;
-        column-gap: 116px;
-      }
+    &__container {
+      padding-inline: 90px;
 
-      &__heading {
-        font-size: 48px;
-        margin-bottom: 0;
-        max-width: 26ch;
-      }
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      column-gap: 116px;
+    }
 
-      &__list {
-        display: flex;
-        flex-direction: column;
-        gap: 35px;
-        justify-self: end;
-      }
+    &__heading {
+      font-size: 48px;
+      margin-bottom: 0;
+      max-width: 26ch;
+    }
 
-      &__item {
-        width: min(194px, 100%);
-        max-width: 194px;
-        gap: 16px;
-      }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      justify-self: end;
+    }
 
-      &__value {
-        font-size: 40px;
-      }
+    &__item {
+      width: min(194px, 100%);
+      max-width: 194px;
+      gap: 16px;
+    }
 
-      &__text {
-        max-width: 194px;
-      }
+    &__value {
+      font-size: 40px;
+    }
+
+    &__text {
+      max-width: 194px;
     }
   }
 
   // 1440
-  @media (min-width: 1440px) {
+  @media (min-width: $bp-laptop) {
     padding-block: 120px;
 
-    .stats {
-      &__container {
-        padding-inline: 90px;
+    &__container {
+      padding-inline: 90px;
 
-        display: grid;
-        grid-template-columns: minmax(0, 646px) 420px;
-        column-gap: 164px;
-        align-items: center;
-      }
+      display: grid;
+      grid-template-columns: minmax(0, 646px) 420px;
+      column-gap: 164px;
+      align-items: center;
+    }
 
-      &__heading {
-        max-width: 646px;
-      }
+    &__heading {
+      max-width: 646px;
+    }
 
-      &__list {
-        flex-direction: row;
-        gap: 32px;
-      }
+    &__list {
+      flex-direction: row;
+      gap: 32px;
+    }
 
-      &__item {
-        width: 194px;
-        max-width: 194px;
-      }
+    &__item {
+      width: 194px;
+      max-width: 194px;
     }
   }
 
-  @media (min-width: 1920px) {
-    .stats {
-      padding-block: 150px;
+  // 1920
+  @media (min-width: $bp-desktop) {
+    padding-block: 150px;
 
-      &__container {
-        padding-inline: 140px;
-        grid-template-columns: minmax(0, 740px) 520px;
-        column-gap: 220px;
-      }
+    &__container {
+      padding-inline: 140px;
+      grid-template-columns: minmax(0, 740px) 520px;
+      column-gap: 220px;
+    }
 
-      &__heading {
-        font-size: 56px;
-        max-width: 740px;
-      }
+    &__heading {
+      font-size: 56px;
+      max-width: 740px;
+    }
 
-      &__list {
-        gap: 48px;
-      }
+    &__list {
+      gap: 48px;
+    }
 
-      &__item {
-        width: 240px;
-        max-width: 240px;
-        gap: 18px;
-      }
+    &__item {
+      width: 240px;
+      max-width: 240px;
+      gap: 18px;
+    }
 
-      &__value {
-        font-size: 48px;
-      }
+    &__value {
+      font-size: 48px;
+    }
 
-      &__text {
-        font-size: 16px;
-        line-height: 1.75;
-      }
+    &__text {
+      font-size: 16px;
+      line-height: 1.75;
     }
   }
 }
 
 // * ========== MISSION ==========
+
 .mission {
   padding-block: 50px;
 
@@ -1280,7 +1238,7 @@
   }
 
   // 1024+
-  @media (min-width: 1024px) {
+  @media (min-width: $bp-laptop-md) {
     padding-block: 90px;
 
     &__container {
@@ -1327,7 +1285,7 @@
   }
 
   // 1440+
-  @media (min-width: 1440px) {
+  @media (min-width: $bp-laptop) {
     padding-block: 120px;
 
     &__container {
@@ -1374,57 +1332,52 @@
   }
 
   // 1920
+  @media (min-width: $bp-desktop) {
+    padding-block: 150px;
 
-  @media (min-width: 1920px) {
-    .mission {
-      padding-block: 150px;
+    &__container {
+      padding-inline: 120px;
+    }
 
-      &__container {
-        padding-inline: 120px;
-      }
+    &__inner {
+      align-items: center;
+      justify-content: space-between;
+      gap: 160px;
+    }
 
-      &__inner {
-        align-items: center;
-        justify-content: space-between;
-        gap: 160px;
-      }
+    &__media {
+      flex: 0 0 720px;
+    }
 
-      &__media {
-        flex: 0 0 720px;
-      }
+    &__picture {
+      width: 720px;
+      border-radius: 10px;
+      aspect-ratio: 720 / 720;
+    }
 
-      &__picture {
-        width: 720px;
-        border-radius: 10px;
-        aspect-ratio: 720 / 720;
-      }
+    &__content {
+      flex: 0 1 820px;
+      max-width: 820px;
+      margin-top: 120px;
+    }
 
-      &__content {
-        flex: 0 1 820px;
-        max-width: 820px;
+    &__title {
+      max-width: 20ch;
 
-        margin-top: 120px;
-      }
+      font-size: 56px;
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
 
-      &__title {
-        max-width: 20ch;
+    &__lead,
+    &__text {
+      font-size: 16px;
+      line-height: 1.8;
+    }
 
-        font-size: 56px;
-        line-height: 1.14;
-        letter-spacing: -0.02em;
-
-        margin-bottom: 20px;
-      }
-
-      &__lead,
-      &__text {
-        font-size: 16px;
-        line-height: 1.8;
-      }
-
-      &__lead {
-        margin-bottom: 20px;
-      }
+    &__lead {
+      margin-bottom: 20px;
     }
   }
 }
