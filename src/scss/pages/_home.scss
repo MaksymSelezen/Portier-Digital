@@ -316,217 +316,6 @@
   }
 }
 
-// * ========== PROJECTS ==========
-
-.projects {
-  &__container {
-    padding-block: 45px;
-  }
-
-  &__item {
-    margin-bottom: 50px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  &__card {
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  &__card-link {
-    position: relative;
-    display: block;
-  }
-
-  &__card-meta {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-
-    width: calc(100% - 74px);
-    max-width: 276px;
-
-    display: flex;
-    align-items: center;
-
-    padding: 10px 15px;
-
-    background-color: $color-surface;
-    border-radius: 0 8px 0 0;
-  }
-
-  &__card-title {
-    font-family: "Sora", sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.714;
-    max-width: 246px;
-  }
-
-  &__card-title-suffix {
-    white-space: nowrap;
-  }
-
-  &__card-btn {
-    position: absolute;
-    right: 15px;
-    bottom: 15px;
-
-    width: 44px;
-    height: 44px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 8px;
-    background-color: $color-surface;
-
-    &--green {
-      background-color: $color-accent-dot;
-
-      .projects__card-btn-icon {
-        stroke: $color-bg-main;
-      }
-    }
-  }
-
-  &__card-btn-icon {
-    width: 9px;
-    height: 9px;
-    stroke: $color-text-main;
-  }
-
-  // 768
-  @media (min-width: $bp-tablet) {
-    &__container {
-      padding-block: 60px;
-      padding-inline: 48px;
-    }
-
-    &__item {
-      margin-bottom: 56px;
-    }
-
-    &__card {
-      max-width: 640px;
-    }
-
-    &__card-meta {
-      width: auto;
-      max-width: 380px;
-      padding: 12px 18px;
-    }
-
-    &__card-title {
-      max-width: 330px;
-    }
-  }
-
-  // 1024
-  @media (min-width: $bp-laptop-md) {
-    &__container {
-      padding-block: 100px;
-      padding-inline: 90px;
-    }
-
-    &__item {
-      margin-bottom: 90px;
-    }
-
-    &__card {
-      max-width: 844px;
-    }
-
-    &__card-meta {
-      left: 30px;
-      bottom: 30px;
-
-      max-width: none;
-      border-radius: 8px;
-      padding: 20px;
-    }
-
-    &__card-title {
-      max-width: none;
-    }
-
-    &__card-title-suffix {
-      display: none;
-    }
-
-    &__card-btn {
-      right: 30px;
-      bottom: 30px;
-    }
-  }
-
-  // 1440
-  @media (min-width: $bp-laptop) {
-    &__container {
-      padding-block: 120px;
-      padding-inline: 90px;
-    }
-
-    &__item {
-      margin-bottom: 80px;
-    }
-
-    &__card {
-      max-width: 1260px;
-    }
-
-    &__card-meta {
-      left: 40px;
-      bottom: 40px;
-    }
-
-    &__card-btn {
-      right: 40px;
-      bottom: 40px;
-    }
-  }
-
-  // 1920
-  @media (min-width: $bp-desktop) {
-    &__container {
-      padding-block: 160px;
-      padding-inline: 120px;
-    }
-
-    &__item {
-      margin-bottom: 90px;
-    }
-
-    &__card {
-      max-width: 1260px;
-    }
-
-    &__card-title {
-      font-size: 18px;
-    }
-
-    &__card-meta {
-      padding: 30px;
-      left: 50px;
-      bottom: 50px;
-    }
-
-    &__card-btn {
-      width: 60px;
-      height: 60px;
-      right: 50px;
-      bottom: 50px;
-    }
-  }
-}
-
 // * ========== ABOUT ==========
 
 .about {
@@ -608,10 +397,6 @@
   // 1024
   @media (min-width: $bp-laptop-md) {
     padding-block: 100px;
-
-    &__container {
-      padding-inline: 90px;
-    }
 
     &__inner {
       flex-wrap: nowrap;
@@ -1035,8 +820,6 @@
     padding-block: 117px;
 
     &__container {
-      padding-inline: 90px;
-
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       align-items: center;
@@ -1076,8 +859,6 @@
     padding-block: 120px;
 
     &__container {
-      padding-inline: 90px;
-
       display: grid;
       grid-template-columns: minmax(0, 646px) 420px;
       column-gap: 164px;
@@ -1241,10 +1022,6 @@
   @media (min-width: $bp-laptop-md) {
     padding-block: 90px;
 
-    &__container {
-      padding-inline: 90px;
-    }
-
     &__inner {
       align-items: flex-start;
       justify-content: flex-start;
@@ -1288,10 +1065,6 @@
   @media (min-width: $bp-laptop) {
     padding-block: 120px;
 
-    &__container {
-      padding-inline: 90px;
-    }
-
     &__inner {
       align-items: flex-start;
       justify-content: flex-start;
@@ -1334,10 +1107,6 @@
   // 1920
   @media (min-width: $bp-desktop) {
     padding-block: 150px;
-
-    &__container {
-      padding-inline: 120px;
-    }
 
     &__inner {
       align-items: center;
