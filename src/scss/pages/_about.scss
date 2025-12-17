@@ -1,6 +1,5 @@
 .about-hero {
-  padding-top: 95px;
-  padding-bottom: 45px;
+  padding-block: 95px 45px;
 
   &__inner {
     display: flex;
@@ -9,8 +8,7 @@
 
   &__media {
     width: 100%;
-    max-width: 350px;
-    position: relative;
+    max-width: $w;
   }
 
   &__picture {
@@ -24,56 +22,51 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgb(0 0 0 / 0.4);
       pointer-events: none;
       z-index: 1;
     }
   }
 
   &__image {
-    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
   &__content {
-    max-width: 350px;
+    max-width: $w;
     position: relative;
     z-index: 2;
   }
 
   &__title {
-    max-width: 350px;
-    margin-top: -80px;
-    margin-bottom: 16px;
+    max-width: $w;
+    margin: -80px 0 16px;
 
-    font-family: "Sora", sans-serif;
     font-weight: 700;
     font-size: 40px;
     line-height: 1.2;
     letter-spacing: -0.01em;
-    color: #fff;
+    color: $color-text-main;
   }
 
   &__title-muted {
-    color: #88888d;
+    color: $color-text-muted;
   }
 
   &__title-accent {
-    color: #57efb4;
+    color: $color-accent-dot;
   }
 
   &__text {
-    max-width: 350px;
+    max-width: $w;
     margin-bottom: 40px;
 
-    font-family: "Sora", sans-serif;
-    font-weight: 400;
     font-size: 24px;
     line-height: 1.33333;
     letter-spacing: -0.01em;
-    color: #88888d;
+    color: $color-text-muted;
   }
 
   &__socials {
@@ -86,30 +79,26 @@
   &__social-link {
     display: inline-flex;
     align-items: center;
+    padding-block: 8px;
 
-    font-family: "Sora", sans-serif;
-    font-weight: 400;
     font-size: 14px;
     line-height: 1.71429;
-    color: #fff;
-
-    padding-block: 8px;
+    color: $color-text-main;
 
     &:hover {
       opacity: 0.85;
     }
 
     &:focus-visible {
-      outline: 2px solid rgba(255, 255, 255, 0.5);
+      outline: 2px solid rgb(255 255 255 / 0.5);
       outline-offset: 4px;
       border-radius: 8px;
     }
   }
 
   // 768+
-  @media (min-width: 768px) {
-    padding-top: 120px;
-    padding-bottom: 64px;
+  @media (min-width: $bp-tablet) {
+    padding-block: 120px 64px;
 
     &__media {
       max-width: none;
@@ -138,20 +127,13 @@
   }
 
   // 1024+
-  @media (min-width: 1024px) {
-    padding-top: 100px;
-    padding-bottom: 100px;
+  @media (min-width: $bp-laptop-md) {
+    padding-block: 100px;
 
     &__picture {
-      aspect-ratio: 690 / 440;
       max-width: 690px;
-      margin: 0 auto;
-    }
-
-    // ВАЖЛИВО: щоб не було “чорних боків” — img заповнює picture
-    &__image {
-      max-width: none;
-      margin: 0;
+      margin-inline: auto;
+      aspect-ratio: 690 / 440;
     }
 
     &__content {
@@ -168,16 +150,13 @@
         "text socials";
       column-gap: 126px;
       row-gap: 16px;
-
-      z-index: 2;
     }
 
     &__title {
       grid-area: title;
 
       max-width: 646px;
-      margin-top: -30px;
-      margin-bottom: 0;
+      margin: -30px 0 0;
 
       font-size: 64px;
       line-height: 1;
@@ -190,10 +169,8 @@
       max-width: 646px;
       margin-bottom: 0;
 
-      font-size: 24px;
       line-height: 1.71429;
       letter-spacing: 0;
-      color: #88888d;
     }
 
     &__socials-nav {
@@ -215,19 +192,13 @@
   }
 
   // 1440+
-  @media (min-width: 1440px) {
-    padding-top: 110px;
-    padding-bottom: 120px;
-
-    &__media {
-      max-width: none;
-      width: 100%;
-    }
+  @media (min-width: $bp-laptop) {
+    padding-block: 110px 120px;
 
     &__picture {
       max-width: 760px;
       aspect-ratio: 760 / 440;
-      margin: 0 auto;
+      margin-inline: auto;
     }
 
     &__content {
@@ -236,7 +207,6 @@
     }
 
     &__title {
-      max-width: 646px;
       font-size: 72px;
       line-height: 1.19444;
       letter-spacing: -0.02em;
@@ -244,7 +214,6 @@
 
     &__text {
       max-width: 633px;
-      font-size: 24px;
       line-height: 1.33333;
       letter-spacing: -0.01em;
     }
@@ -259,9 +228,8 @@
   }
 
   // 1920+
-  @media (min-width: 1920px) {
-    padding-top: 140px;
-    padding-bottom: 160px;
+  @media (min-width: $bp-desktop) {
+    padding-block: 140px 160px;
 
     &__picture {
       max-width: 920px;
