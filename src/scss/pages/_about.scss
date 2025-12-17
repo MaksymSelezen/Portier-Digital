@@ -14,10 +14,24 @@
   }
 
   &__picture {
+    position: relative;
+    display: block;
+    width: 100%;
     aspect-ratio: 350 / 400;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      pointer-events: none;
+      z-index: 1;
+    }
   }
 
   &__image {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -26,7 +40,7 @@
   &__content {
     max-width: 350px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
 
   &__title {
@@ -130,11 +144,14 @@
 
     &__picture {
       aspect-ratio: 690 / 440;
-    }
-
-    &__image {
       max-width: 690px;
       margin: 0 auto;
+    }
+
+    // ВАЖЛИВО: щоб не було “чорних боків” — img заповнює picture
+    &__image {
+      max-width: none;
+      margin: 0;
     }
 
     &__content {
@@ -152,7 +169,7 @@
       column-gap: 126px;
       row-gap: 16px;
 
-      z-index: 1;
+      z-index: 2;
     }
 
     &__title {
@@ -208,27 +225,18 @@
     }
 
     &__picture {
-      display: block;
-      width: 100%;
       max-width: 760px;
-      margin: 0 auto;
       aspect-ratio: 760 / 440;
-    }
-
-    &__image {
-      max-width: none;
-      margin: 0;
+      margin: 0 auto;
     }
 
     &__content {
       margin-top: -170px;
-
       grid-template-columns: 646px 1fr;
     }
 
     &__title {
       max-width: 646px;
-
       font-size: 72px;
       line-height: 1.19444;
       letter-spacing: -0.02em;
@@ -236,7 +244,6 @@
 
     &__text {
       max-width: 633px;
-
       font-size: 24px;
       line-height: 1.33333;
       letter-spacing: -0.01em;
@@ -271,7 +278,6 @@
 
     &__title {
       max-width: 720px;
-
       font-size: 84px;
       line-height: 1.12;
       letter-spacing: -0.02em;
@@ -279,7 +285,6 @@
 
     &__text {
       max-width: 720px;
-
       font-size: 28px;
       line-height: 1.35;
       letter-spacing: -0.01em;
