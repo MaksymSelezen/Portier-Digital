@@ -1,5 +1,6 @@
 .about-hero {
-  padding-block: 95px 45px;
+  padding-top: 95px;
+  padding-bottom: 45px;
 
   &__inner {
     display: flex;
@@ -8,7 +9,8 @@
 
   &__media {
     width: 100%;
-    max-width: $w;
+    max-width: 350px;
+    position: relative;
   }
 
   &__picture {
@@ -22,51 +24,56 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgb(0 0 0 / 0.4);
+      background: rgba(0, 0, 0, 0.4);
       pointer-events: none;
       z-index: 1;
     }
   }
 
   &__image {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
   &__content {
-    max-width: $w;
+    max-width: 350px;
     position: relative;
     z-index: 2;
   }
 
   &__title {
-    max-width: $w;
-    margin: -80px 0 16px;
+    max-width: 350px;
+    margin-top: -80px;
+    margin-bottom: 16px;
 
+    font-family: "Sora", sans-serif;
     font-weight: 700;
     font-size: 40px;
     line-height: 1.2;
     letter-spacing: -0.01em;
-    color: $color-text-main;
+    color: #fff;
   }
 
   &__title-muted {
-    color: $color-text-muted;
+    color: #88888d;
   }
 
   &__title-accent {
-    color: $color-accent-dot;
+    color: #57efb4;
   }
 
   &__text {
-    max-width: $w;
+    max-width: 350px;
     margin-bottom: 40px;
 
+    font-family: "Sora", sans-serif;
+    font-weight: 400;
     font-size: 24px;
     line-height: 1.33333;
     letter-spacing: -0.01em;
-    color: $color-text-muted;
+    color: #88888d;
   }
 
   &__socials {
@@ -79,26 +86,30 @@
   &__social-link {
     display: inline-flex;
     align-items: center;
-    padding-block: 8px;
 
+    font-family: "Sora", sans-serif;
+    font-weight: 400;
     font-size: 14px;
     line-height: 1.71429;
-    color: $color-text-main;
+    color: #fff;
+
+    padding-block: 8px;
 
     &:hover {
       opacity: 0.85;
     }
 
     &:focus-visible {
-      outline: 2px solid rgb(255 255 255 / 0.5);
+      outline: 2px solid rgba(255, 255, 255, 0.5);
       outline-offset: 4px;
       border-radius: 8px;
     }
   }
 
   // 768+
-  @media (min-width: $bp-tablet) {
-    padding-block: 120px 64px;
+  @media (min-width: 768px) {
+    padding-top: 120px;
+    padding-bottom: 64px;
 
     &__media {
       max-width: none;
@@ -127,13 +138,19 @@
   }
 
   // 1024+
-  @media (min-width: $bp-laptop-md) {
-    padding-block: 100px;
+  @media (min-width: 1024px) {
+    padding-top: 100px;
+    padding-bottom: 100px;
 
     &__picture {
-      max-width: 690px;
-      margin-inline: auto;
       aspect-ratio: 690 / 440;
+      max-width: 690px;
+      margin: 0 auto;
+    }
+
+    &__image {
+      max-width: none;
+      margin: 0;
     }
 
     &__content {
@@ -150,13 +167,16 @@
         "text socials";
       column-gap: 126px;
       row-gap: 16px;
+
+      z-index: 2;
     }
 
     &__title {
       grid-area: title;
 
       max-width: 646px;
-      margin: -30px 0 0;
+      margin-top: -30px;
+      margin-bottom: 0;
 
       font-size: 64px;
       line-height: 1;
@@ -169,8 +189,10 @@
       max-width: 646px;
       margin-bottom: 0;
 
+      font-size: 24px;
       line-height: 1.71429;
       letter-spacing: 0;
+      color: #88888d;
     }
 
     &__socials-nav {
@@ -192,13 +214,19 @@
   }
 
   // 1440+
-  @media (min-width: $bp-laptop) {
-    padding-block: 110px 120px;
+  @media (min-width: 1440px) {
+    padding-top: 110px;
+    padding-bottom: 120px;
+
+    &__media {
+      max-width: none;
+      width: 100%;
+    }
 
     &__picture {
       max-width: 760px;
       aspect-ratio: 760 / 440;
-      margin-inline: auto;
+      margin: 0 auto;
     }
 
     &__content {
@@ -207,6 +235,7 @@
     }
 
     &__title {
+      max-width: 646px;
       font-size: 72px;
       line-height: 1.19444;
       letter-spacing: -0.02em;
@@ -214,6 +243,7 @@
 
     &__text {
       max-width: 633px;
+      font-size: 24px;
       line-height: 1.33333;
       letter-spacing: -0.01em;
     }
@@ -228,8 +258,9 @@
   }
 
   // 1920+
-  @media (min-width: $bp-desktop) {
-    padding-block: 140px 160px;
+  @media (min-width: 1920px) {
+    padding-top: 140px;
+    padding-bottom: 160px;
 
     &__picture {
       max-width: 920px;
