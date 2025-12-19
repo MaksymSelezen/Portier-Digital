@@ -823,10 +823,6 @@
       gap: 20px;
     }
 
-    &__logo {
-      transform: translateY(0);
-    }
-
     &__name {
       line-height: 1.25;
       margin-bottom: 6px;
@@ -835,7 +831,7 @@
 
   // 1024
   @media (min-width: $bp-laptop-md) {
-    padding-block: 100px;
+    padding-block: 90px;
 
     &__inner {
       max-width: none;
@@ -901,22 +897,101 @@
     &__item--active &__card {
       background: $color-surface;
     }
-
-    &__logo {
-      transform: translateY(0);
-    }
   }
 
   // 1440
   @media (min-width: $bp-laptop) {
+    padding-block: 100px 120px;
+
     &__inner {
-      grid-template-columns: 660px 296px;
+      grid-template-columns: minmax(0, 660px) clamp(438px, 30vw, 520px);
       column-gap: 176px;
+
       justify-content: start;
     }
 
     &__list {
+      width: 100%;
+      max-width: none;
       justify-self: start;
+    }
+
+    &__card {
+      width: 100%;
+      min-width: 0;
+    }
+
+    // 1920
+    @media (min-width: $bp-desktop) {
+      padding-block: 140px;
+
+      &__inner {
+        max-width: 1600px;
+
+        grid-template-columns: minmax(0, 820px) clamp(520px, 28vw, 560px);
+        column-gap: clamp(160px, 10vw, 200px);
+        row-gap: 20px;
+
+        justify-content: start;
+      }
+
+      &__title {
+        font-size: clamp(56px, 3.2vw, 64px);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        max-width: 20ch;
+      }
+
+      &__desc {
+        font-size: 16px;
+        line-height: 1.75;
+        max-width: 70ch;
+      }
+
+      &__quote {
+        font-size: 16px;
+        line-height: 1.75;
+        max-width: 60ch;
+      }
+
+      &__list {
+        width: 100%;
+        max-width: none;
+        gap: 36px;
+        justify-self: start;
+      }
+
+      &__card {
+        width: 100%;
+        min-width: 0;
+
+        min-height: 104px;
+        padding: 24px;
+        border-radius: 10px;
+      }
+
+      &__logo {
+        width: 52px;
+        height: 52px;
+        flex-basis: 52px;
+        transform: translateY(0);
+      }
+
+      &__icon {
+        width: 15px;
+        height: 15px;
+      }
+
+      &__name {
+        font-size: 28px;
+        line-height: 1.25;
+        margin-bottom: 6px;
+      }
+
+      &__role {
+        font-size: 14px;
+        line-height: 1.6;
+      }
     }
   }
 }
