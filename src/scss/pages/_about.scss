@@ -926,8 +926,6 @@
       padding-block: 140px;
 
       &__inner {
-        max-width: 1600px;
-
         grid-template-columns: minmax(0, 820px) clamp(520px, 28vw, 560px);
         column-gap: clamp(160px, 10vw, 200px);
         row-gap: 20px;
