@@ -188,7 +188,6 @@
     line-height: 1.25;
     letter-spacing: -0.01em;
     color: $color-text-main;
-
     margin-bottom: 16px;
   }
 
@@ -247,7 +246,6 @@
   &__body {
     display: flex;
     flex-direction: column;
-
     width: 100%;
     padding: 20px;
   }
@@ -314,15 +312,13 @@
 
     &__body {
       height: 100%;
-      min-height: 316px;
-
+      max-height: 316px;
       padding-top: 30px;
       padding-left: 40px;
     }
 
     &__card-title {
       line-height: 1.25;
-
       max-width: 20ch;
       margin-bottom: 16px;
     }
@@ -364,56 +360,107 @@
 
   // 1440
   @media (min-width: $bp-laptop) {
+    padding-block: 120px;
+
+    &__header {
+      max-width: 704px;
+      margin-bottom: 40px;
+    }
+
     &__list {
-      gap: 72px;
+      gap: 32px;
+    }
+
+    &__item:first-child &__more {
+      display: inline-flex;
     }
 
     &__card {
-      grid-template-columns: minmax(520px, 1fr) 1fr;
+      grid-template-columns: clamp(560px, 40vw, 600px) minmax(0, 1fr);
+    }
+
+    &__media {
+      height: auto;
+      min-height: 316px;
+      aspect-ratio: 560 / 316;
+      max-width: 560px;
+    }
+
+    &__media picture {
+      height: 100%;
     }
 
     &__body {
-      padding: 48px;
+      padding: 45px 40px 40px 25px;
+      // padding: 40px;
+      width: 100%;
+      min-height: 0;
+    }
+
+    &__card-title {
+      max-width: 586px;
+      letter-spacing: -0.01em;
+    }
+
+    &__excerpt {
+      max-width: 557px;
     }
   }
 
   // 1920
   @media (min-width: $bp-desktop) {
+    padding-block: clamp(120px, 6vw, 160px);
+
     &__header {
-      margin-bottom: 72px;
-      max-width: 70ch;
+      max-width: 72ch;
+      margin-bottom: clamp(40px, 3vw, 72px);
     }
 
     &__title {
-      font-size: 40px;
+      font-size: clamp(48px, 2.6vw, 56px);
       line-height: 1.15;
     }
 
     &__lead {
       font-size: 16px;
       line-height: 1.6;
+      max-width: 62ch;
     }
 
     &__list {
-      gap: 80px;
+      gap: clamp(32px, 3.5vw, 80px);
     }
 
     &__card {
-      grid-template-columns: minmax(600px, 1fr) 1fr;
+      grid-template-columns: clamp(600px, 42vw, 760px) minmax(0, 1fr);
+      min-height: clamp(316px, 18vw, 420px);
+    }
+
+    &__media {
+      max-width: none;
+      min-height: clamp(316px, 18vw, 420px);
+      aspect-ratio: 760 / 420;
+    }
+
+    &__body {
+      padding: clamp(40px, 3.2vw, 64px);
     }
 
     &__card-title {
-      font-size: 28px;
-      max-width: 22ch;
+      font-size: clamp(32px, 2vw, 40px);
+      line-height: 1.2;
+      max-width: 26ch;
+      margin-bottom: clamp(16px, 1.4vw, 24px);
     }
 
     &__excerpt {
       font-size: 16px;
       line-height: 1.6;
-      max-width: 44ch;
+      max-width: 56ch;
     }
 
     &__more {
+      margin-top: clamp(24px, 2vw, 36px);
       font-size: 16px;
       line-height: 1.6;
     }
