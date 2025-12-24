@@ -482,7 +482,7 @@ body {
   // 1024
   @media (min-width: $bp-laptop-md) {
     &__container {
-      padding-block: 100px;
+      padding-block: 100px 90px;
     }
 
     &__item {
@@ -580,11 +580,13 @@ body {
   padding-block: 45px;
 
   &__inner {
+    width: 100%;
     max-width: 350px;
   }
 
   &__text {
     width: 100%;
+    max-width: 100%;
     margin-bottom: 24px;
 
     font-weight: 400;
@@ -630,6 +632,7 @@ body {
 
   &__title {
     width: 100%;
+    max-width: 350px;
     margin-top: 60px;
 
     font-weight: 700;
@@ -637,6 +640,13 @@ body {
     line-height: 1.25;
     letter-spacing: -0.01em;
     color: $color-text-main;
+  }
+
+  @media (min-width: 415px) and (max-width: ($bp-tablet - 1px)) {
+    &__inner,
+    &__title {
+      max-width: 100%;
+    }
   }
 
   // 768
@@ -647,7 +657,7 @@ body {
       max-width: 100%;
 
       display: grid;
-      grid-template-columns: minmax(280px, 360px) 1fr;
+      grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
       grid-template-areas:
         "text title"
         "button title";
@@ -675,10 +685,22 @@ body {
     &__title {
       grid-area: title;
       margin-top: 0;
+
+      width: 100%;
       max-width: 271px;
 
       font-size: 40px;
       line-height: 1.2;
+    }
+  }
+
+  @media (min-width: ($bp-tablet + 1px)) and (max-width: ($bp-laptop-md - 1px)) {
+    &__inner {
+      grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+    }
+
+    &__title {
+      max-width: 100%;
     }
   }
 
@@ -707,12 +729,25 @@ body {
     }
   }
 
+  @media (min-width: ($bp-laptop-md + 1px)) and (max-width: ($bp-laptop - 1px)) {
+    &__inner {
+      grid-template-columns: 271px minmax(0, 1fr);
+    }
+
+    &__title {
+      max-width: 100%;
+    }
+  }
+
   // 1440
   @media (min-width: $bp-laptop) {
     padding-block: 120px;
 
     &__inner {
-      grid-template-columns: 530px 508px;
+      width: 100%;
+      max-width: 100%;
+
+      grid-template-columns: minmax(0, 530px) minmax(0, 508px);
       column-gap: 222px;
       row-gap: 0;
     }
@@ -739,12 +774,19 @@ body {
     }
   }
 
+  @media (min-width: ($bp-laptop + 1px)) and (max-width: ($bp-desktop - 1px)) {
+    &__inner {
+      grid-template-columns: minmax(0, 530px) minmax(0, 508px);
+      column-gap: 222px;
+    }
+  }
+
   // 1920
   @media (min-width: $bp-desktop) {
     padding-block: 140px;
 
     &__inner {
-      grid-template-columns: 600px 560px;
+      grid-template-columns: minmax(0, 600px) minmax(0, 560px);
       column-gap: 320px;
     }
 

@@ -1,7 +1,7 @@
 // * ========== HERO ==========
 
 .blog-hero {
-  padding-block: 100px 45px;
+  padding-block: 90px 45px;
 
   &__inner {
     width: 100%;
@@ -179,7 +179,7 @@
 
   &__header {
     max-width: 60ch;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
   }
 
   &__title {
@@ -330,7 +330,7 @@
 
   // 1024
   @media (min-width: $bp-laptop-md) {
-    padding-block: 100px;
+    padding-block: 100px 90px;
 
     &__card {
       grid-template-columns: minmax(420px, 1fr) 1fr;
@@ -364,7 +364,7 @@
 
     &__header {
       max-width: 704px;
-      margin-bottom: 40px;
+      margin-bottom: 48px;
     }
 
     &__list {
@@ -392,7 +392,6 @@
 
     &__body {
       padding: 45px 40px 40px 25px;
-      // padding: 40px;
       width: 100%;
       min-height: 0;
     }

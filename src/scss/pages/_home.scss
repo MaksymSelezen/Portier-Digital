@@ -425,7 +425,7 @@
 
   // 1024
   @media (min-width: $bp-laptop-md) {
-    padding-block: 100px;
+    padding-block: 110px 100px;
 
     &__inner {
       flex-wrap: nowrap;

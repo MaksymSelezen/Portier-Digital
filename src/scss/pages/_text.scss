@@ -7,9 +7,13 @@
   }
 
   &__author {
+    width: 100%;
+    max-width: 100%;
+
     display: flex;
     align-items: center;
     gap: 12px;
+
     margin-bottom: 24px;
   }
 
@@ -28,6 +32,9 @@
   }
 
   &__author-name {
+    width: 100%;
+    max-width: 100%;
+
     font-weight: 400;
     font-size: 14px;
     line-height: 1.33333;
@@ -36,16 +43,21 @@
   }
 
   &__title {
+    width: 100%;
+    max-width: 100%;
+
     font-weight: 700;
     font-size: 40px;
     line-height: 1.2;
     letter-spacing: -0.01em;
     color: $color-text-main;
+
     margin-bottom: 16px;
   }
 
   &__date {
     display: inline-block;
+
     font-weight: 400;
     font-size: 14px;
     line-height: 1.71429;
@@ -53,6 +65,9 @@
   }
 
   &__content {
+    width: 100%;
+    max-width: 100%;
+
     margin-top: 48px;
     display: flex;
     flex-direction: column;
@@ -60,6 +75,9 @@
   }
 
   &__text {
+    width: 100%;
+    max-width: 100%;
+
     font-weight: 400;
     font-size: 24px;
     line-height: 1.33333;
@@ -98,15 +116,23 @@
     }
   }
 
+  @media (min-width: 415px) and (max-width: ($bp-tablet - 1px)) {
+    &__inner {
+      max-width: 100%;
+    }
+  }
+
   // 768
   @media (min-width: $bp-tablet) {
     padding-block: clamp(110px, 12vw, 140px) clamp(96px, 10vw, 120px);
 
     &__inner {
+      width: 100%;
       max-width: clamp(720px, 74vw, 844px);
     }
 
     &__title {
+      max-width: 100%;
       font-size: clamp(48px, 5.5vw, 64px);
       line-height: 1.1;
     }
@@ -116,11 +142,20 @@
     }
   }
 
+  @media (min-width: ($bp-tablet + 1px)) and (max-width: ($bp-laptop-md - 1px)) {
+    &__inner,
+    &__title,
+    &__text {
+      max-width: 100%;
+    }
+  }
+
   // 1024
   @media (min-width: $bp-laptop-md) {
     padding-block: 100px 110px;
 
     &__inner {
+      width: 100%;
       max-width: 844px;
     }
 
@@ -135,11 +170,22 @@
     }
   }
 
+  @media (min-width: ($bp-laptop-md + 1px)) and (max-width: ($bp-laptop - 1px)) {
+    &__inner,
+    &__title,
+    &__text {
+      max-width: 100%;
+    }
+  }
+
   // 1440
   @media (min-width: $bp-laptop) {
     padding-block: clamp(200px, 12vw, 240px);
 
     &__container {
+      width: 100%;
+      max-width: 100%;
+
       padding-inline: clamp(305px, calc(22vw - 12px), 520px)
         clamp(250px, calc(18vw - 9px), 420px);
     }
@@ -159,24 +205,32 @@
     }
 
     &__inner {
+      width: 100%;
       max-width: clamp(900px, 58vw, 1260px);
     }
 
     &__title {
-      font-size: clamp(72px, 4.6vw, 92px);
+      width: 100%;
       max-width: clamp(886px, 50vw, 1140px);
+
+      font-size: clamp(72px, 4.6vw, 92px);
       line-height: 1.12;
     }
 
     &__content {
+      width: 100%;
+      max-width: 100%;
+
       margin-top: clamp(48px, 4vw, 72px);
       gap: clamp(24px, 1.8vw, 32px);
     }
 
     &__text {
+      width: 100%;
+      max-width: 830px;
+
       font-size: clamp(24px, 1.45vw, 30px);
       line-height: 1.31;
-      max-width: 830px;
     }
 
     &__back {
@@ -190,10 +244,14 @@
     padding-block: clamp(220px, 13vw, 280px);
 
     &__container {
+      width: 100%;
+      max-width: 100%;
+
       padding-inline: clamp(360px, 20vw, 560px) clamp(280px, 15vw, 460px);
     }
 
     &__inner {
+      width: 100%;
       max-width: clamp(1040px, 56vw, 1360px);
     }
 

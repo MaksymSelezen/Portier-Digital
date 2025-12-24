@@ -8,6 +8,9 @@
   }
 
   &__title {
+    width: 100%;
+    max-width: 100%;
+
     font-size: 40px;
     line-height: 1.2;
     letter-spacing: -0.01em;
@@ -26,6 +29,7 @@
 
   &__divider {
     width: 100%;
+    max-width: 100%;
     height: 1px;
     background-color: rgba(255, 255, 255, 0.08);
     margin-bottom: 48px;
@@ -69,9 +73,19 @@
   }
 
   &__text {
+    width: 100%;
+    max-width: 100%;
+
     font-size: 16px;
     line-height: 1.5;
     color: $color-text-muted;
+  }
+
+  @media (min-width: 415px) and (max-width: ($bp-tablet - 1px)) {
+    &__inner,
+    &__btn {
+      max-width: 100%;
+    }
   }
 
   // 768
@@ -129,6 +143,16 @@
     }
   }
 
+  @media (min-width: ($bp-tablet + 1px)) and (max-width: ($bp-laptop-md - 1px)) {
+    &__inner {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    &__text {
+      max-width: 100%;
+    }
+  }
+
   // 1024
   @media (min-width: $bp-laptop-md) {
     padding-block: 150px 100px;
@@ -143,7 +167,6 @@
       max-width: 809px;
       font-size: 64px;
       line-height: 1;
-      letter-spacing: -0.01em;
     }
 
     &__divider {
@@ -167,12 +190,26 @@
     }
   }
 
+  @media (min-width: ($bp-laptop-md + 1px)) and (max-width: ($bp-laptop - 1px)) {
+    &__inner {
+      grid-template-columns: 158px minmax(0, 1fr);
+    }
+
+    &__title,
+    &__text {
+      max-width: 100%;
+    }
+  }
+
   // 1440
   @media (min-width: $bp-laptop) {
     padding-block: 190px 200px;
 
     &__inner {
-      grid-template-columns: 158px 488px 611px;
+      width: 100%;
+      max-width: 100%;
+
+      grid-template-columns: 158px minmax(0, 488px) minmax(0, 611px);
       grid-template-areas:
         "title title title"
         "divider divider divider"
@@ -212,12 +249,23 @@
     }
   }
 
+  @media (min-width: ($bp-laptop + 1px)) and (max-width: ($bp-desktop - 1px)) {
+    &__inner {
+      grid-template-columns: 158px minmax(0, 488px) minmax(0, 611px);
+    }
+
+    &__title,
+    &__text {
+      max-width: 100%;
+    }
+  }
+
   // 1920
   @media (min-width: $bp-desktop) {
     padding-block: 240px;
 
     &__inner {
-      grid-template-columns: 180px 560px 720px;
+      grid-template-columns: 180px minmax(0, 560px) minmax(0, 720px);
       grid-template-areas:
         "title title title"
         "divider divider divider"

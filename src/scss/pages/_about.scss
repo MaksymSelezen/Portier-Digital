@@ -392,7 +392,7 @@
 
   &__desc {
     font-size: 14px;
-    line-height: 1.71429;
+    line-height: 1.7;
     color: $color-text-muted;
   }
 
@@ -470,6 +470,7 @@
 
     &__lead {
       margin-bottom: 48px;
+      line-height: 1.9;
     }
 
     &__list {
@@ -643,6 +644,7 @@
 
     &__value {
       font-size: 64px;
+      margin-bottom: 8px;
     }
 
     &__list {
