@@ -226,16 +226,18 @@
 
   // 1440
   @media (min-width: $bp-laptop) {
-    padding-top: 120px;
+    padding-top: 115px;
     padding-bottom: 120px;
 
     &__title {
       font-size: 72px;
       max-width: 903px;
+      margin-bottom: 16px;
     }
 
     &__subtitle {
       margin-bottom: 25px;
+      line-height: 1.33333;
     }
 
     &__btn {
@@ -246,9 +248,13 @@
       padding: 20px;
     }
 
+    &__service-text {
+      min-width: 362px;
+    }
+
     &__services {
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      column-gap: 40px;
+      column-gap: 48px;
       row-gap: 0;
       margin-top: 72px;
     }
@@ -264,6 +270,14 @@
 
     &__service:nth-child(3) {
       order: 3;
+    }
+
+    &__service:last-child {
+      margin-left: -15px;
+    }
+
+    &__icon {
+      margin-bottom: 26px;
     }
   }
 
@@ -457,11 +471,13 @@
     }
 
     &__title {
-      line-height: 1.25;
-
       br {
         display: none;
       }
+    }
+
+    &__text {
+      letter-spacing: normal;
     }
 
     &__picture {
