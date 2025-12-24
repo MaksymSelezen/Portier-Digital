@@ -15,7 +15,7 @@
     font-weight: 700;
     font-size: 40px;
     line-height: 1.2;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     color: $color-text-main;
 
     &-accent {
@@ -65,11 +65,18 @@
     background-color: transparent;
 
     & + & {
-      margin-top: 35px;
+      margin-top: 30px;
     }
 
     &--background {
       background-color: $color-surface;
+      margin-bottom: 35px;
+    }
+  }
+
+  &__service--background {
+    .hero-home__service-text {
+      letter-spacing: -0.024em;
     }
   }
 
@@ -327,7 +334,7 @@
 
   &__title {
     font-size: 32px;
-    line-height: 1.1;
+    line-height: 1.2;
     letter-spacing: -0.01em;
     color: $color-text-main;
 
@@ -355,7 +362,7 @@
     height: 100%;
     object-fit: cover;
 
-    margin-top: 48px;
+    margin-top: 45px;
   }
 
   // 768
@@ -507,7 +514,7 @@
     font-family: "Sora", sans-serif;
     font-weight: 400;
     font-size: 14px;
-    line-height: 1.71429;
+    line-height: 1.73;
     color: $color-text-muted;
   }
 
@@ -561,7 +568,7 @@
   }
 
   &__quote-text {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 
     font-family: "Sora", sans-serif;
     font-weight: 400;
@@ -575,7 +582,7 @@
   }
 
   &__name {
-    margin: 0 0 4px;
+    margin: 0 0 6px;
 
     font-family: "Sora", sans-serif;
     font-weight: 700;
@@ -765,13 +772,13 @@
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 40px;
   }
 
   &__item {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
 
     max-width: 342px;
   }
@@ -919,7 +926,7 @@
 // * ========== MISSION ==========
 
 .mission {
-  padding-block: 50px;
+  padding-block: 45px;
 
   &__container {
     display: flex;

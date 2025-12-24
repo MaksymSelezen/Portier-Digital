@@ -128,7 +128,7 @@ body {
 
 .header {
   background-color: $color-bg-main;
-  padding-block: 25px;
+  padding-block: 27px;
 
   &__inner {
     display: flex;
@@ -775,7 +775,7 @@ body {
 // * ========== FOOTER ==========
 
 .footer {
-  padding-block: 50px;
+  padding-block: 55px;
   background-color: $color-surface;
 
   &__inner {
@@ -786,7 +786,7 @@ body {
   &__logo {
     display: inline-flex;
     align-items: center;
-    gap: 17px;
+    gap: 16px;
 
     margin-left: 9px;
     margin-bottom: 52px;
@@ -811,6 +811,7 @@ body {
 
   &__logo-text {
     display: inline-block;
+    letter-spacing: -0.05em;
   }
 
   &__links {
