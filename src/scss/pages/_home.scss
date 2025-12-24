@@ -191,11 +191,15 @@
     &__title {
       font-size: 64px;
       max-width: 845px;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
     }
 
     &__subtitle {
       max-width: 845px;
       font-size: 24px;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
     }
 
     &__btn {
@@ -203,8 +207,8 @@
     }
 
     &__services {
-      column-gap: 24px;
-      row-gap: 25px;
+      column-gap: 41px;
+      row-gap: 35px;
     }
 
     &__service:nth-child(2) {
@@ -212,7 +216,7 @@
     }
 
     &__service {
-      padding: 24px;
+      padding: 20px;
     }
 
     &__service-text {
@@ -365,6 +369,10 @@
     margin-top: 45px;
   }
 
+  &__title-break {
+    display: none;
+  }
+
   // 768
   @media (min-width: $bp-tablet) {
     padding-block: 64px;
@@ -417,6 +425,16 @@
 
     &__title {
       font-size: 48px;
+      line-height: 1.16667;
+      letter-spacing: -0.02em;
+    }
+
+    &__title-break {
+      display: block;
+    }
+
+    &__text {
+      letter-spacing: 0.04em;
     }
 
     &__picture {
@@ -655,7 +673,7 @@
     &__list {
       max-width: 438px;
       justify-self: start;
-      gap: 30px;
+      gap: 39px;
     }
 
     &__title {
@@ -824,7 +842,7 @@
 
   // 1024
   @media (min-width: $bp-laptop-md) {
-    padding-block: 117px;
+    padding-block: 110px;
 
     &__container {
       display: grid;
@@ -837,12 +855,14 @@
       font-size: 48px;
       margin-bottom: 0;
       max-width: 26ch;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
     }
 
     &__list {
       display: flex;
       flex-direction: column;
-      gap: 35px;
+      gap: 40px;
       justify-self: end;
     }
 

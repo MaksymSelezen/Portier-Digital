@@ -457,7 +457,7 @@ body {
   @media (min-width: $bp-tablet) {
     &__container {
       padding-block: 60px;
-      padding-inline: 48px;
+      padding-inline: 45px;
     }
 
     &__item {
@@ -922,7 +922,7 @@ body {
     padding-block: 100px;
 
     &__logo {
-      margin-left: 0;
+      margin-left: 10px;
       margin-bottom: 32px;
     }
 
