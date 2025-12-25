@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Inter:wght@400&family=Sora:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <title>Blog</title>
+  </head>
+  <body>
+    <header class="header">
+  <div class="container header__inner">
+    <a href="./index.html" class="header__logo">
+      <svg class="header__logo-icon" width="23" height="28" aria-hidden="true">
+        <use href="./icons/sprite.svg#portier"></use>
+      </svg>
+      <span class="header__logo-text">Portier</span>
+    </a>
+
+    <button
+      class="header__burger"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      data-menu-open
+    >
+      <svg
+        class="header__burger-icon"
+        width="24"
+        height="24"
+        aria-hidden="true"
+      >
+        <use href="./icons/sprite.svg#burger"></use>
+      </svg>
+    </button>
+
+    <nav class="header__nav" aria-label="Main navigation">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a
+            href="./portfolio.html"
+            class="header__nav-link header__nav-link--current"
+          >
+            Portfolio
+          </a>
+        </li>
+        <li class="header__nav-item">
+          <a href="./about.html" class="header__nav-link">About Me</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="./blog.html" class="header__nav-link">Blog</a>
+        </li>
+      </ul>
+
+      <button
+        class="header__btn"
+        type="button"
+        aria-label="Open template request form"
+      >
+        Get Template
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- Мобільне меню -->
+<div
+  class="mobile-menu"
+  id="mobile-menu"
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  data-menu
+>
+  <div class="mobile-menu__backdrop" data-menu-close></div>
+
+  <div class="mobile-menu__content">
+    <button
+      class="mobile-menu__close"
+      type="button"
+      aria-label="Close navigation"
+      data-menu-close
+    >
+      ×
+    </button>
+
+    <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+      <ul class="mobile-menu__nav-list">
+        <li class="mobile-menu__nav-item">
+          <a
+            href="./portfolio.html"
+            class="mobile-menu__nav-link"
+            data-menu-link
+          >
+            Portfolio
+          </a>
+        </li>
+        <li class="mobile-menu__nav-item">
+          <a href="./about.html" class="mobile-menu__nav-link" data-menu-link>
+            About Me
+          </a>
+        </li>
+        <li class="mobile-menu__nav-item">
+          <a href="./blog.html" class="mobile-menu__nav-link" data-menu-link>
+            Blog
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <button
+      class="mobile-menu__btn"
+      type="button"
+      aria-label="Open template request form in mobile"
+      data-menu-close
+    >
+      Get Template
+    </button>
+  </div>
+</div>
+
+
+    <main>
+      <!-- Hero Blog -->
+
+      <section class="blog-hero" id="blog-hero">
+        <div class="container blog-hero__container">
+          <div class="blog-hero__inner">
+            <h1 class="blog-hero__title">
+              Find tips about the best design practices
+            </h1>
+
+            <p class="blog-hero__text">
+              Everything in nature has a structure, a way that the parts relate
+              to one another, which is generally fluid and not so easy to
+              conceptualize.
+            </p>
+
+            <form class="blog-hero__form" action="#" method="post">
+              <input
+                class="blog-hero__input"
+                type="email"
+                name="email"
+                placeholder="Your email address"
+                aria-label="Your email address"
+                required
+              />
+
+              <button class="blog-hero__button" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Articles Section -->
+
+      <section class="blog-articles section" id="articles">
+        <div class="container blog-articles__container">
+          <div class="blog-articles__header">
+            <h2 class="blog-articles__title">Latest articles</h2>
+            <p class="blog-articles__lead">
+              Repeated failure will toughen your spirit and show you with
+              absolute clarity how things must be done.
+            </p>
+          </div>
+
+          <ul class="blog-articles__list">
+            <li class="blog-articles__item">
+              <article class="blog-articles__card">
+                <div class="blog-articles__media">
+                  <picture>
+                    <source
+                      srcset="./images/blog/article-1_1440.png"
+                      media="(min-width: 1440px)"
+                      type="image/png"
+                    />
+                    <source
+                      srcset="./images/blog/article-1_1024.png"
+                      media="(min-width: 768px)"
+                      type="image/png"
+                    />
+                    <img
+                      class="blog-articles__img"
+                      src="./images/blog/article-1_414.png"
+                      alt="Free fonts alternatives: The ultimate guide"
+                      loading="lazy"
+                    />
+                  </picture>
+                </div>
+
+                <div class="blog-articles__body">
+                  <h3 class="blog-articles__card-title">
+                    Free fonts alternatives: The ultimate <br />
+                    guide
+                  </h3>
+
+                  <p class="blog-articles__excerpt">
+                    You must engrave deeply in your mind and never forget: your
+                    emotional commitment to what you are doing will be
+                    translated into your work.
+                  </p>
+
+                  <a class="blog-articles__more" href="./text.html">
+                    Read full post
+                    <svg
+                      class="blog-articles__icon"
+                      width="11"
+                      height="9"
+                      viewBox="0 0 11 9"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M6.14645 0.146453C6.34171 -0.0488175 6.65829 -0.0488175 6.85355 0.146453L10.8536 4.14645C11.0488 4.34171 11.0488 4.65829 10.8536 4.85355L6.85355 8.8536C6.65829 9.0488 6.34171 9.0488 6.14645 8.8536C5.95118 8.6583 5.95118 8.3417 6.14645 8.1464L9.2929 5H0.5C0.22386 5 0 4.77614 0 4.5C0 4.22386 0.22386 4 0.5 4H9.2929L6.14645 0.853552C5.95118 0.658292 5.95118 0.341713 6.14645 0.146453Z"
+                        fill="#006ADA"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            </li>
+
+            <li class="blog-articles__item">
+              <article class="blog-articles__card blog-articles__card--surface">
+                <div class="blog-articles__media">
+                  <picture>
+                    <source
+                      srcset="./images/blog/article-2_1440.png"
+                      media="(min-width: 1440px)"
+                      type="image/png"
+                    />
+                    <source
+                      srcset="./images/blog/article-2_1024.png"
+                      media="(min-width: 768px)"
+                      type="image/png"
+                    />
+                    <img
+                      class="blog-articles__img"
+                      src="./images/blog/article-2_414.png"
+                      alt="How to design an app from scratch"
+                      loading="lazy"
+                    />
+                  </picture>
+                </div>
+
+                <div class="blog-articles__body">
+                  <h3 class="blog-articles__card-title">
+                    How to design an app from scratch
+                  </h3>
+
+                  <p class="blog-articles__excerpt">
+                    You must engrave deeply in your mind and never forget: your
+                    emotional commitment to what you are doing will be
+                    translated into your work.
+                  </p>
+
+                  <a class="blog-articles__more" href="./text.html">
+                    Read full post
+                    <svg
+                      class="blog-articles__icon"
+                      width="11"
+                      height="9"
+                      viewBox="0 0 11 9"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M6.14645 0.146453C6.34171 -0.0488175 6.65829 -0.0488175 6.85355 0.146453L10.8536 4.14645C11.0488 4.34171 11.0488 4.65829 10.8536 4.85355L6.85355 8.8536C6.65829 9.0488 6.34171 9.0488 6.14645 8.8536C5.95118 8.6583 5.95118 8.3417 6.14645 8.1464L9.2929 5H0.5C0.22386 5 0 4.77614 0 4.5C0 4.22386 0.22386 4 0.5 4H9.2929L6.14645 0.853552C5.95118 0.658292 5.95118 0.341713 6.14645 0.146453Z"
+                        fill="#006ADA"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            </li>
+
+            <li class="blog-articles__item">
+              <article class="blog-articles__card">
+                <div class="blog-articles__media">
+                  <picture>
+                    <source
+                      srcset="./images/blog/article-3_1440.png"
+                      media="(min-width: 1440px)"
+                      type="image/png"
+                    />
+                    <source
+                      srcset="./images/blog/article-3_1024.png"
+                      media="(min-width: 768px)"
+                      type="image/png"
+                    />
+                    <img
+                      class="blog-articles__img"
+                      src="./images/blog/article-3_414.png"
+                      alt="100 things a UI-UX Designer should know"
+                      loading="lazy"
+                    />
+                  </picture>
+                </div>
+
+                <div class="blog-articles__body">
+                  <h3 class="blog-articles__card-title">
+                    100 things a UI-UX Designer should <br />
+                    know
+                  </h3>
+
+                  <p class="blog-articles__excerpt">
+                    You must engrave deeply in your mind and never forget: your
+                    emotional commitment to what you are doing will be
+                    translated into your work.
+                  </p>
+
+                  <a class="blog-articles__more" href="./text.html">
+                    Read full post
+                    <svg
+                      class="blog-articles__icon"
+                      width="11"
+                      height="9"
+                      viewBox="0 0 11 9"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M6.14645 0.146453C6.34171 -0.0488175 6.65829 -0.0488175 6.85355 0.146453L10.8536 4.14645C11.0488 4.34171 11.0488 4.65829 10.8536 4.85355L6.85355 8.8536C6.65829 9.0488 6.34171 9.0488 6.14645 8.8536C5.95118 8.6583 5.95118 8.3417 6.14645 8.1464L9.2929 5H0.5C0.22386 5 0 4.77614 0 4.5C0 4.22386 0.22386 4 0.5 4H9.2929L6.14645 0.853552C5.95118 0.658292 5.95118 0.341713 6.14645 0.146453Z"
+                        fill="#006ADA"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            </li>
+
+            <li class="blog-articles__item">
+              <article class="blog-articles__card">
+                <div class="blog-articles__media">
+                  <picture>
+                    <source
+                      srcset="./images/blog/article-4_1440.png"
+                      media="(min-width: 1440px)"
+                      type="image/png"
+                    />
+                    <source
+                      srcset="./images/blog/article-4_1024.png"
+                      media="(min-width: 768px)"
+                      type="image/png"
+                    />
+                    <img
+                      class="blog-articles__img"
+                      src="./images/blog/article-4_414.png"
+                      alt="4 rules for intuitive UX"
+                      loading="lazy"
+                    />
+                  </picture>
+                </div>
+
+                <div class="blog-articles__body">
+                  <h3 class="blog-articles__card-title">
+                    4 rules for intuitive UX
+                  </h3>
+
+                  <p class="blog-articles__excerpt">
+                    You must engrave deeply in your mind and never forget: your
+                    emotional commitment to what you are doing will be
+                    translated into your work.
+                  </p>
+
+                  <a class="blog-articles__more" href="./text.html">
+                    Read full post
+                    <svg
+                      class="blog-articles__icon"
+                      width="11"
+                      height="9"
+                      viewBox="0 0 11 9"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M6.14645 0.146453C6.34171 -0.0488175 6.65829 -0.0488175 6.85355 0.146453L10.8536 4.14645C11.0488 4.34171 11.0488 4.65829 10.8536 4.85355L6.85355 8.8536C6.65829 9.0488 6.34171 9.0488 6.14645 8.8536C5.95118 8.6583 5.95118 8.3417 6.14645 8.1464L9.2929 5H0.5C0.22386 5 0 4.77614 0 4.5C0 4.22386 0.22386 4 0.5 4H9.2929L6.14645 0.853552C5.95118 0.658292 5.95118 0.341713 6.14645 0.146453Z"
+                        fill="#006ADA"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CTA -->
+
+      <section class="cta" aria-labelledby="cta-title">
+  <div class="container cta__container">
+    <div class="cta__inner">
+      <p class="cta__text">
+        If we keep practicing, we gain fluency; basic skills are mastered,
+        allowing us <br />
+        to take on newer and more exciting challenges.
+      </p>
+
+      <a class="cta__button" href="./contact.html">Get In Touch</a>
+
+      <h2 class="cta__title" id="cta-title">
+        How about we make something awesome together?
+      </h2>
+    </div>
+  </div>
+</section>
+
+    </main>
+
+    <footer class="footer">
+  <div class="container footer__container">
+    <div class="footer__inner">
+      <a class="footer__logo" href="./index.html" aria-label="Portier Home">
+        <svg
+          class="footer__logo-icon"
+          width="27"
+          height="32"
+          aria-hidden="true"
+        >
+          <use href="./icons/sprite.svg#portier"></use>
+        </svg>
+        <span class="footer__logo-text">Portier</span>
+      </a>
+
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <ul class="footer__links">
+          <li class="footer__link-item">
+            <a class="footer__link" href="./portfolio.html">Portfolio</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="./blog.html">Blog</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="#">Handbook</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="#">Timeline</a>
+          </li>
+
+          <li class="footer__link-item">
+            <a class="footer__link" href="./about.html">About Me</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="#">Contact</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="#">Design System</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          Copyright 2021 © Portier. All right reserved
+        </p>
+
+        <ul class="footer__social">
+          <li class="footer__social-item">
+            <a class="footer__social-link" href="#" aria-label="Twitter">
+              <svg
+                class="footer__social-icon"
+                width="14"
+                height="12"
+                aria-hidden="true"
+              >
+                <use href="./icons/sprite.svg#twitter"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="footer__social-item">
+            <a
+              class="footer__social-link footer__social-link--active"
+              href="#"
+              aria-label="GitHub"
+            >
+              <svg
+                class="footer__social-icon"
+                width="14"
+                height="12"
+                aria-hidden="true"
+              >
+                <use href="./icons/sprite.svg#github"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="footer__social-item">
+            <a class="footer__social-link" href="#" aria-label="Dribbble">
+              <svg
+                class="footer__social-icon"
+                width="14"
+                height="12"
+                aria-hidden="true"
+              >
+                <use href="./icons/sprite.svg#framer"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="footer__social-item">
+            <a class="footer__social-link" href="#" aria-label="Cube">
+              <svg
+                class="footer__social-icon"
+                width="14"
+                height="12"
+                aria-hidden="true"
+              >
+                <use href="./icons/sprite.svg#codesandbox"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="./js/main.js" defer></script>
+  </body>
+</html>

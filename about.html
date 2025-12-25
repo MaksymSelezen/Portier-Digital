@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Inter:wght@400&family=Sora:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <title>About Me</title>
+  </head>
+  <body>
+    <header class="header">
+  <div class="container header__inner">
+    <a href="./index.html" class="header__logo">
+      <svg class="header__logo-icon" width="23" height="28" aria-hidden="true">
+        <use href="./icons/sprite.svg#portier"></use>
+      </svg>
+      <span class="header__logo-text">Portier</span>
+    </a>
+
+    <button
+      class="header__burger"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      data-menu-open
+    >
+      <svg
+        class="header__burger-icon"
+        width="24"
+        height="24"
+        aria-hidden="true"
+      >
+        <use href="./icons/sprite.svg#burger"></use>
+      </svg>
+    </button>
+
+    <nav class="header__nav" aria-label="Main navigation">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a
+            href="./portfolio.html"
+            class="header__nav-link header__nav-link--current"
+          >
+            Portfolio
+          </a>
+        </li>
+        <li class="header__nav-item">
+          <a href="./about.html" class="header__nav-link">About Me</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="./blog.html" class="header__nav-link">Blog</a>
+        </li>
+      </ul>
+
+      <button
+        class="header__btn"
+        type="button"
+        aria-label="Open template request form"
+      >
+        Get Template
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- Мобільне меню -->
+<div
+  class="mobile-menu"
+  id="mobile-menu"
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  data-menu
+>
+  <div class="mobile-menu__backdrop" data-menu-close></div>
+
+  <div class="mobile-menu__content">
+    <button
+      class="mobile-menu__close"
+      type="button"
+      aria-label="Close navigation"
+      data-menu-close
+    >
+      ×
+    </button>
+
+    <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+      <ul class="mobile-menu__nav-list">
+        <li class="mobile-menu__nav-item">
+          <a
+            href="./portfolio.html"
+            class="mobile-menu__nav-link"
+            data-menu-link
+          >
+            Portfolio
+          </a>
+        </li>
+        <li class="mobile-menu__nav-item">
+          <a href="./about.html" class="mobile-menu__nav-link" data-menu-link>
+            About Me
+          </a>
+        </li>
+        <li class="mobile-menu__nav-item">
+          <a href="./blog.html" class="mobile-menu__nav-link" data-menu-link>
+            Blog
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <button
+      class="mobile-menu__btn"
+      type="button"
+      aria-label="Open template request form in mobile"
+      data-menu-close
+    >
+      Get Template
+    </button>
+  </div>
+</div>
+
+
+    <main>
+      <!-- Hero About -->
+
+      <section class="about-hero">
+        <div class="container about-hero__container">
+          <div class="about-hero__inner">
+            <div class="about-hero__media">
+              <picture class="about-hero__picture">
+                <source
+                  media="(min-width: 1440px)"
+                  srcset="./images/about/hero_1440.png"
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="./images/about/hero_1024.png"
+                />
+                <img
+                  class="about-hero__image"
+                  src="./images/about/hero_414.png"
+                  alt="Portrait photo"
+                  width="350"
+                  height="400"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+
+            <div class="about-hero__content">
+              <h1 class="about-hero__title">
+                I am Portier UI–UX Designer
+                <span class="about-hero__title-muted">based</span>
+                in Florida<span class="about-hero__title-accent">.</span>
+              </h1>
+
+              <p class="about-hero__text">
+                Become who you are by learning who you are.
+              </p>
+
+              <nav class="about-hero__socials-nav" aria-label="Social links">
+                <ul class="about-hero__socials">
+                  <li class="about-hero__social-item">
+                    <a
+                      class="about-hero__social-link"
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Twitter</a
+                    >
+                  </li>
+                  <li class="about-hero__social-item">
+                    <a
+                      class="about-hero__social-link"
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Facebook</a
+                    >
+                  </li>
+                  <li class="about-hero__social-item">
+                    <a
+                      class="about-hero__social-link"
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Email</a
+                    >
+                  </li>
+                  <li class="about-hero__social-item">
+                    <a
+                      class="about-hero__social-link"
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Instagram</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Traits Section -->
+      <section class="traits" aria-labelledby="traits-title">
+        <div class="container traits__container">
+          <div class="traits__inner">
+            <h2 class="traits__title" id="traits-title">
+              What makes me who I am.
+            </h2>
+
+            <p class="traits__lead">
+              <span class="traits__lead-text traits__lead-text--sm">
+                First, you must see your attempt at attaining mastery as
+                something extremely necessary and positive.
+              </span>
+              <span class="traits__lead-text traits__lead-text--lg">
+                &ldquo;If you work on yourself first, as Faraday did, developing
+                a solid work ethic and organizational skills, eventually the
+                right teacher will appear in your life.&rdquo;
+              </span>
+            </p>
+
+            <ul class="traits__list">
+              <!-- 1 -->
+              <li class="traits__item">
+                <article class="traits__card">
+                  <div class="traits__icon-wrap" aria-hidden="true">
+                    <svg
+                      class="traits__icon traits__icon--sm"
+                      width="11"
+                      height="11"
+                    >
+                      <use href="./icons/sprite.svg#hashtag"></use>
+                    </svg>
+                    <svg
+                      class="traits__icon traits__icon--lg"
+                      width="14"
+                      height="14"
+                    >
+                      <use href="./icons/sprite.svg#smile"></use>
+                    </svg>
+                  </div>
+
+                  <div class="traits__body">
+                    <h3 class="traits__name">Passionate</h3>
+
+                    <p class="traits__desc">
+                      <span class="traits__desc-text traits__desc-text--sm">
+                        The time that leads to mastery is dependent on the
+                        intensity of our focus.
+                      </span>
+                      <span class="traits__desc-text traits__desc-text--lg">
+                        As Pasteur himself commented, &ldquo;Chance favors only
+                        the prepared mind.&rdquo;
+                      </span>
+                    </p>
+                  </div>
+                </article>
+              </li>
+
+              <!-- 2 -->
+              <li class="traits__item">
+                <article class="traits__card">
+                  <div class="traits__icon-wrap" aria-hidden="true">
+                    <svg
+                      class="traits__icon traits__icon--sm"
+                      width="11"
+                      height="11"
+                    >
+                      <use href="./icons/sprite.svg#search"></use>
+                    </svg>
+                    <svg
+                      class="traits__icon traits__icon--lg"
+                      width="14"
+                      height="14"
+                    >
+                      <use href="./icons/sprite.svg#search"></use>
+                    </svg>
+                  </div>
+
+                  <div class="traits__body">
+                    <h3 class="traits__name">Curious</h3>
+
+                    <p class="traits__desc">
+                      <span class="traits__desc-text traits__desc-text--sm">
+                        The time that leads to mastery is dependent on the
+                        intensity of our focus.
+                      </span>
+                      <span class="traits__desc-text traits__desc-text--lg">
+                        As Pasteur himself commented, &ldquo;Chance favors only
+                        the prepared mind.&rdquo;
+                      </span>
+                    </p>
+                  </div>
+                </article>
+              </li>
+
+              <!-- 3 -->
+              <li class="traits__item">
+                <article class="traits__card">
+                  <div class="traits__icon-wrap" aria-hidden="true">
+                    <svg
+                      class="traits__icon traits__icon--sm"
+                      width="11"
+                      height="11"
+                    >
+                      <use href="./icons/sprite.svg#hashtag"></use>
+                    </svg>
+                    <svg
+                      class="traits__icon traits__icon--lg"
+                      width="14"
+                      height="14"
+                    >
+                      <use href="./icons/sprite.svg#globe"></use>
+                    </svg>
+                  </div>
+
+                  <div class="traits__body">
+                    <h3 class="traits__name">Team Work</h3>
+
+                    <p class="traits__desc">
+                      <span class="traits__desc-text traits__desc-text--sm">
+                        The time that leads to mastery is dependent on the
+                        intensity of our focus.
+                      </span>
+                      <span class="traits__desc-text traits__desc-text--lg">
+                        As Pasteur himself commented, &ldquo;Chance favors only
+                        the prepared mind.&rdquo;
+                      </span>
+                    </p>
+                  </div>
+                </article>
+              </li>
+
+              <!-- 4 (active) -->
+              <li class="traits__item">
+                <article class="traits__card traits__card--active">
+                  <div class="traits__icon-wrap" aria-hidden="true">
+                    <svg
+                      class="traits__icon traits__icon--sm"
+                      width="11"
+                      height="11"
+                    >
+                      <use href="./icons/sprite.svg#hashtag"></use>
+                    </svg>
+                    <svg
+                      class="traits__icon traits__icon--lg"
+                      width="15"
+                      height="15"
+                    >
+                      <use href="./icons/sprite.svg#ruler"></use>
+                    </svg>
+                  </div>
+
+                  <div class="traits__body">
+                    <h3 class="traits__name">Discipline</h3>
+
+                    <p class="traits__desc">
+                      <span class="traits__desc-text traits__desc-text--sm">
+                        The time that leads to mastery is dependent on the
+                        intensity of our focus.
+                      </span>
+                      <span class="traits__desc-text traits__desc-text--lg">
+                        As Pasteur himself commented, &ldquo;Chance favors only
+                        the prepared mind.&rdquo;
+                      </span>
+                    </p>
+                  </div>
+                </article>
+              </li>
+
+              <!-- 5 -->
+              <li class="traits__item">
+                <article class="traits__card">
+                  <div class="traits__icon-wrap" aria-hidden="true">
+                    <svg
+                      class="traits__icon traits__icon--sm"
+                      width="11"
+                      height="11"
+                    >
+                      <use href="./icons/sprite.svg#hashtag"></use>
+                    </svg>
+                    <svg
+                      class="traits__icon traits__icon--lg"
+                      width="14"
+                      height="14"
+                    >
+                      <use href="./icons/sprite.svg#pencil"></use>
+                    </svg>
+                  </div>
+
+                  <div class="traits__body">
+                    <h3 class="traits__name">Creative</h3>
+
+                    <p class="traits__desc">
+                      <span class="traits__desc-text traits__desc-text--sm">
+                        The time that leads to mastery is dependent on the
+                        intensity of our focus.
+                      </span>
+                      <span class="traits__desc-text traits__desc-text--lg">
+                        As Pasteur himself commented, &ldquo;Chance favors only
+                        the prepared mind.&rdquo;
+                      </span>
+                    </p>
+                  </div>
+                </article>
+              </li>
+
+              <!-- 6 -->
+              <li class="traits__item">
+                <article class="traits__card">
+                  <div class="traits__icon-wrap" aria-hidden="true">
+                    <svg
+                      class="traits__icon traits__icon--sm"
+                      width="11"
+                      height="11"
+                    >
+                      <use href="./icons/sprite.svg#hashtag"></use>
+                    </svg>
+                    <svg
+                      class="traits__icon traits__icon--lg"
+                      width="14"
+                      height="14"
+                    >
+                      <use href="./icons/sprite.svg#user"></use>
+                    </svg>
+                  </div>
+
+                  <div class="traits__body">
+                    <h3 class="traits__name">Compassionate</h3>
+
+                    <p class="traits__desc">
+                      <span class="traits__desc-text traits__desc-text--sm">
+                        The time that leads to mastery is dependent on the
+                        intensity of our focus.
+                      </span>
+                      <span class="traits__desc-text traits__desc-text--lg">
+                        As Pasteur himself commented, &ldquo;Chance favors only
+                        the prepared mind.&rdquo;
+                      </span>
+                    </p>
+                  </div>
+                </article>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="about-stats" aria-label="Stats">
+        <div class="container about-stats__inner">
+          <ul class="about-stats__list">
+            <li class="about-stats__item">
+              <p class="about-stats__value">50+</p>
+              <p class="about-stats__text">
+                The game you want to play is different: to instead find a niche
+                in the ecology that you can dominate.
+              </p>
+            </li>
+
+            <li class="about-stats__item">
+              <p class="about-stats__value">90%</p>
+              <p class="about-stats__text">
+                The game you want to play is different: to instead find a niche
+                in the ecology that you can dominate.
+              </p>
+            </li>
+
+            <li class="about-stats__item">
+              <p class="about-stats__value">12k</p>
+              <p class="about-stats__text">
+                The game you want to play is different: to instead find a niche
+                in the ecology that you can dominate.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Companies Section -->
+      <section class="about-companies" id="companies">
+        <div class="container about-companies__inner">
+          <h2 class="about-companies__title">Companies I have worked with.</h2>
+
+          <p class="about-companies__desc">
+            This means that you move toward challenges that will toughen and
+            improve you, where you will get the most objective feedback on your
+            performance and progress. You do not choose apprenticeships that
+            seem easy and comfortable
+          </p>
+
+          <p class="about-companies__quote">
+            One can have no smaller or greater mastery than mastery of oneself.
+          </p>
+
+          <ul class="about-companies__list">
+            <li class="about-companies__item">
+              <article class="about-companies__card">
+                <div class="about-companies__logo" aria-hidden="true">
+                  <svg class="about-companies__icon" width="13" height="13">
+                    <use href="./icons/sprite.svg#modulz"></use>
+                  </svg>
+                </div>
+
+                <div class="about-companies__meta">
+                  <h3 class="about-companies__name">Modulz</h3>
+                  <p class="about-companies__role">Lead Designer</p>
+                </div>
+              </article>
+            </li>
+
+            <li class="about-companies__item about-companies__item--active">
+              <article class="about-companies__card">
+                <div class="about-companies__logo" aria-hidden="true">
+                  <svg class="about-companies__icon" width="13" height="13">
+                    <use href="./icons/sprite.svg#stitches"></use>
+                  </svg>
+                </div>
+
+                <div class="about-companies__meta">
+                  <h3 class="about-companies__name">Stitches</h3>
+                  <p class="about-companies__role">UI Designer</p>
+                </div>
+              </article>
+            </li>
+
+            <li class="about-companies__item">
+              <article class="about-companies__card">
+                <div class="about-companies__logo" aria-hidden="true">
+                  <svg class="about-companies__icon" width="13" height="13">
+                    <use href="./icons/sprite.svg#vercel"></use>
+                  </svg>
+                </div>
+
+                <div class="about-companies__meta">
+                  <h3 class="about-companies__name">Vercel</h3>
+                  <p class="about-companies__role">Frontend developer</p>
+                </div>
+              </article>
+            </li>
+
+            <li class="about-companies__item">
+              <article class="about-companies__card">
+                <div class="about-companies__logo" aria-hidden="true">
+                  <svg class="about-companies__icon" width="13" height="13">
+                    <use href="./icons/sprite.svg#framer"></use>
+                  </svg>
+                </div>
+
+                <div class="about-companies__meta">
+                  <h3 class="about-companies__name">Framer</h3>
+                  <p class="about-companies__role">UX Designer</p>
+                </div>
+              </article>
+            </li>
+
+            <li class="about-companies__item">
+              <article class="about-companies__card">
+                <div class="about-companies__logo" aria-hidden="true">
+                  <svg class="about-companies__icon" width="13" height="13">
+                    <use href="./icons/sprite.svg#figma"></use>
+                  </svg>
+                </div>
+
+                <div class="about-companies__meta">
+                  <h3 class="about-companies__name">Figma</h3>
+                  <p class="about-companies__role">Lead Developer</p>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta" aria-labelledby="cta-title">
+  <div class="container cta__container">
+    <div class="cta__inner">
+      <p class="cta__text">
+        If we keep practicing, we gain fluency; basic skills are mastered,
+        allowing us <br />
+        to take on newer and more exciting challenges.
+      </p>
+
+      <a class="cta__button" href="./contact.html">Get In Touch</a>
+
+      <h2 class="cta__title" id="cta-title">
+        How about we make something awesome together?
+      </h2>
+    </div>
+  </div>
+</section>
+
+    </main>
+
+    <footer class="footer">
+  <div class="container footer__container">
+    <div class="footer__inner">
+      <a class="footer__logo" href="./index.html" aria-label="Portier Home">
+        <svg
+          class="footer__logo-icon"
+          width="27"
+          height="32"
+          aria-hidden="true"
+        >
+          <use href="./icons/sprite.svg#portier"></use>
+        </svg>
+        <span class="footer__logo-text">Portier</span>
+      </a>
+
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <ul class="footer__links">
+          <li class="footer__link-item">
+            <a class="footer__link" href="./portfolio.html">Portfolio</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="./blog.html">Blog</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="#">Handbook</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="#">Timeline</a>
+          </li>
+
+          <li class="footer__link-item">
+            <a class="footer__link" href="./about.html">About Me</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="#">Contact</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="#">Design System</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          Copyright 2021 © Portier. All right reserved
+        </p>
+
+        <ul class="footer__social">
+          <li class="footer__social-item">
+            <a class="footer__social-link" href="#" aria-label="Twitter">
+              <svg
+                class="footer__social-icon"
+                width="14"
+                height="12"
+                aria-hidden="true"
+              >
+                <use href="./icons/sprite.svg#twitter"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="footer__social-item">
+            <a
+              class="footer__social-link footer__social-link--active"
+              href="#"
+              aria-label="GitHub"
+            >
+              <svg
+                class="footer__social-icon"
+                width="14"
+                height="12"
+                aria-hidden="true"
+              >
+                <use href="./icons/sprite.svg#github"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="footer__social-item">
+            <a class="footer__social-link" href="#" aria-label="Dribbble">
+              <svg
+                class="footer__social-icon"
+                width="14"
+                height="12"
+                aria-hidden="true"
+              >
+                <use href="./icons/sprite.svg#framer"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="footer__social-item">
+            <a class="footer__social-link" href="#" aria-label="Cube">
+              <svg
+                class="footer__social-icon"
+                width="14"
+                height="12"
+                aria-hidden="true"
+              >
+                <use href="./icons/sprite.svg#codesandbox"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="./js/main.js" defer></script>
+  </body>
+</html>

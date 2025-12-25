@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Inter:wght@400&family=Sora:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <header class="header">
+  <div class="container header__inner">
+    <a href="./index.html" class="header__logo">
+      <svg class="header__logo-icon" width="23" height="28" aria-hidden="true">
+        <use href="./icons/sprite.svg#portier"></use>
+      </svg>
+      <span class="header__logo-text">Portier</span>
+    </a>
+
+    <button
+      class="header__burger"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      data-menu-open
+    >
+      <svg
+        class="header__burger-icon"
+        width="24"
+        height="24"
+        aria-hidden="true"
+      >
+        <use href="./icons/sprite.svg#burger"></use>
+      </svg>
+    </button>
+
+    <nav class="header__nav" aria-label="Main navigation">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a
+            href="./portfolio.html"
+            class="header__nav-link header__nav-link--current"
+          >
+            Portfolio
+          </a>
+        </li>
+        <li class="header__nav-item">
+          <a href="./about.html" class="header__nav-link">About Me</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="./blog.html" class="header__nav-link">Blog</a>
+        </li>
+      </ul>
+
+      <button
+        class="header__btn"
+        type="button"
+        aria-label="Open template request form"
+      >
+        Get Template
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- Мобільне меню -->
+<div
+  class="mobile-menu"
+  id="mobile-menu"
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  data-menu
+>
+  <div class="mobile-menu__backdrop" data-menu-close></div>
+
+  <div class="mobile-menu__content">
+    <button
+      class="mobile-menu__close"
+      type="button"
+      aria-label="Close navigation"
+      data-menu-close
+    >
+      ×
+    </button>
+
+    <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+      <ul class="mobile-menu__nav-list">
+        <li class="mobile-menu__nav-item">
+          <a
+            href="./portfolio.html"
+            class="mobile-menu__nav-link"
+            data-menu-link
+          >
+            Portfolio
+          </a>
+        </li>
+        <li class="mobile-menu__nav-item">
+          <a href="./about.html" class="mobile-menu__nav-link" data-menu-link>
+            About Me
+          </a>
+        </li>
+        <li class="mobile-menu__nav-item">
+          <a href="./blog.html" class="mobile-menu__nav-link" data-menu-link>
+            Blog
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <button
+      class="mobile-menu__btn"
+      type="button"
+      aria-label="Open template request form in mobile"
+      data-menu-close
+    >
+      Get Template
+    </button>
+  </div>
+</div>
+
+
+    <main>
+      <!-- Hero Portfolio -->
+      <section class="portfolio-hero" aria-labelledby="portfolio-hero-title">
+        <div class="container portfolio-hero__container">
+          <div class="portfolio-hero__inner">
+            <h1 class="portfolio-hero__title" id="portfolio-hero-title">
+              I love
+              <span class="portfolio-hero__title-muted">what I do</span> and I
+              make sure I do great<span class="portfolio-hero__dot">.</span>
+            </h1>
+
+            <div class="portfolio-hero__divider" aria-hidden="true"></div>
+
+            <a class="portfolio-hero__btn" href="#projects">View My Work</a>
+
+            <p class="portfolio-hero__text">
+              I am Portier, experienced Digital Product Designer based on
+              Florida. I am here to help you build your amazing product.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="projects">
+  <div class="container projects__container">
+    <ul class="projects__list">
+      <li class="projects__item">
+        <article class="projects__card">
+          <a href="#" class="projects__card-link">
+            <picture>
+              <source
+                srcset="./images/home/project_1-1440.png"
+                media="(min-width: 1440px)"
+              />
+              <source
+                srcset="./images/home/project_1-1024.png"
+                media="(min-width: 768px)"
+              />
+              <img
+                class="projects__image"
+                src="./images/home/project_1.png"
+                alt="Portier - templates & components library"
+                loading="lazy"
+              />
+            </picture>
+
+            <div class="projects__card-meta">
+              <h3 class="projects__card-title">
+                Portier - The ultimate templates &amp; components library.
+              </h3>
+            </div>
+
+            <span class="projects__card-btn" aria-hidden="true">
+              <svg class="projects__card-btn-icon" width="9" height="9">
+                <use href="./icons/sprite.svg#arrow"></use>
+              </svg>
+            </span>
+          </a>
+        </article>
+      </li>
+
+      <li class="projects__item">
+        <article class="projects__card">
+          <a href="#" class="projects__card-link">
+            <picture>
+              <source
+                srcset="./images/home/project_2-1440.png"
+                media="(min-width: 1440px)"
+              />
+              <source
+                srcset="./images/home/project_2-1024.png"
+                media="(min-width: 768px)"
+              />
+              <img
+                class="projects__image"
+                src="./images/home/project_2.png"
+                alt="The Corporate - card for Indian startups"
+                loading="lazy"
+              />
+            </picture>
+
+            <div class="projects__card-meta">
+              <h3 class="projects__card-title">
+                The Corporate – Card for Indian Startups
+              </h3>
+            </div>
+
+            <span
+              class="projects__card-btn projects__card-btn--green"
+              aria-hidden="true"
+            >
+              <svg class="projects__card-btn-icon" width="9" height="9">
+                <use href="./icons/sprite.svg#arrow"></use>
+              </svg>
+            </span>
+          </a>
+        </article>
+      </li>
+
+      <li class="projects__item">
+        <article class="projects__card">
+          <a href="#" class="projects__card-link">
+            <picture>
+              <source
+                srcset="./images/home/project_3-1440.png"
+                media="(min-width: 1440px)"
+              />
+              <source
+                srcset="./images/home/project_3-1024.png"
+                media="(min-width: 768px)"
+              />
+              <img
+                class="projects__image"
+                src="./images/home/project_3.png"
+                alt="Components web app interface"
+                loading="lazy"
+              />
+            </picture>
+
+            <div class="projects__card-meta">
+              <h3 class="projects__card-title">
+                Components Web App Interface
+                <span class="projects__card-title-suffix">• UI</span>
+              </h3>
+            </div>
+
+            <span class="projects__card-btn" aria-hidden="true">
+              <svg class="projects__card-btn-icon" width="9" height="9">
+                <use href="./icons/sprite.svg#arrow"></use>
+              </svg>
+            </span>
+          </a>
+        </article>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+      <!-- CTA -->
+      <section class="cta" aria-labelledby="cta-title">
+  <div class="container cta__container">
+    <div class="cta__inner">
+      <p class="cta__text">
+        If we keep practicing, we gain fluency; basic skills are mastered,
+        allowing us <br />
+        to take on newer and more exciting challenges.
+      </p>
+
+      <a class="cta__button" href="./contact.html">Get In Touch</a>
+
+      <h2 class="cta__title" id="cta-title">
+        How about we make something awesome together?
+      </h2>
+    </div>
+  </div>
+</section>
+
+    </main>
+
+    <footer class="footer">
+  <div class="container footer__container">
+    <div class="footer__inner">
+      <a class="footer__logo" href="./index.html" aria-label="Portier Home">
+        <svg
+          class="footer__logo-icon"
+          width="27"
+          height="32"
+          aria-hidden="true"
+        >
+          <use href="./icons/sprite.svg#portier"></use>
+        </svg>
+        <span class="footer__logo-text">Portier</span>
+      </a>
+
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <ul class="footer__links">
+          <li class="footer__link-item">
+            <a class="footer__link" href="./portfolio.html">Portfolio</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="./blog.html">Blog</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="#">Handbook</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="#">Timeline</a>
+          </li>
+
+          <li class="footer__link-item">
+            <a class="footer__link" href="./about.html">About Me</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="#">Contact</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="footer__link" href="#">Design System</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          Copyright 2021 © Portier. All right reserved
+        </p>
+
+        <ul class="footer__social">
+          <li class="footer__social-item">
+            <a class="footer__social-link" href="#" aria-label="Twitter">
+              <svg
+                class="footer__social-icon"
+                width="14"
+                height="12"
+                aria-hidden="true"
+              >
+                <use href="./icons/sprite.svg#twitter"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="footer__social-item">
+            <a
+              class="footer__social-link footer__social-link--active"
+              href="#"
+              aria-label="GitHub"
+            >
+              <svg
+                class="footer__social-icon"
+                width="14"
+                height="12"
+                aria-hidden="true"
+              >
+                <use href="./icons/sprite.svg#github"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="footer__social-item">
+            <a class="footer__social-link" href="#" aria-label="Dribbble">
+              <svg
+                class="footer__social-icon"
+                width="14"
+                height="12"
+                aria-hidden="true"
+              >
+                <use href="./icons/sprite.svg#framer"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="footer__social-item">
+            <a class="footer__social-link" href="#" aria-label="Cube">
+              <svg
+                class="footer__social-icon"
+                width="14"
+                height="12"
+                aria-hidden="true"
+              >
+                <use href="./icons/sprite.svg#codesandbox"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="./js/main.js" defer></script>
+  </body>
+</html>

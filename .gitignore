@@ -1,0 +1,16 @@
+# Папки збірки та залежностей
+node_modules/
+dist/
+
+# Логи
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Системні файли
+.DS_Store
+Thumbs.db
+
+# VS Code налаштування (якщо не хочеш пушити)
+.vscode/
