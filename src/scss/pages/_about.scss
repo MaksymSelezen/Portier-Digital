@@ -286,266 +286,6 @@
   }
 }
 
-// // * ========== TRAITS ==========
-
-// .traits {
-//   padding-block: 40px;
-
-//   &__inner {
-//     width: 100%;
-//     margin-inline: auto;
-//   }
-
-//   &__title {
-//     font-weight: 700;
-//     font-size: 32px;
-//     line-height: 1.25;
-//     letter-spacing: -0.01em;
-//     text-align: center;
-
-//     margin-inline: auto;
-//     margin-bottom: 16px;
-//   }
-
-//   &__lead {
-//     font-size: 14px;
-//     line-height: 1.71429;
-//     text-align: center;
-//     color: $color-text-muted;
-
-//     margin-inline: auto;
-//     margin-bottom: 48px;
-//   }
-
-//   &__list {
-//     display: flex;
-//     flex-direction: column;
-//     gap: 30px;
-//   }
-
-//   &__card {
-//     height: 100%;
-
-//     display: flex;
-//     flex-direction: column;
-//     align-items: flex-start;
-//     gap: 24px;
-
-//     padding: 20px 16px 20px 20px;
-//     border-radius: 8px;
-//     background: transparent;
-//   }
-
-//   &__card--active {
-//     background: $color-surface;
-//   }
-
-//   &__icon-wrap {
-//     width: 44px;
-//     height: 44px;
-//     flex: 0 0 44px;
-
-//     display: grid;
-//     place-items: center;
-
-//     border-radius: 8px;
-//     background: $color-surface;
-//     color: $color-text-main;
-//   }
-
-//   &__icon {
-//     display: block;
-//     fill: currentColor;
-
-//     path,
-//     use,
-//     g,
-//     * {
-//       fill: currentColor;
-//       stroke: currentColor;
-//     }
-//   }
-
-//   &__card--active &__icon-wrap {
-//     background: $color-accent-dot;
-//     color: $color-bg-main;
-//   }
-
-//   &__card--active &__icon,
-//   &__card--active &__icon * {
-//     fill: $color-bg-main;
-//     stroke: $color-bg-main;
-//   }
-
-//   &__body {
-//     width: 100%;
-//     min-width: 0;
-//   }
-
-//   &__name {
-//     display: inline-block;
-//     font-weight: 600;
-//     font-size: 24px;
-//     line-height: 1.33333;
-//     margin-bottom: 16px;
-//   }
-
-//   &__desc {
-//     font-size: 14px;
-//     line-height: 1.7;
-//     color: $color-text-muted;
-//   }
-
-//   &__icon--lg,
-//   &__desc-text--lg,
-//   &__lead-text--lg {
-//     display: none;
-//   }
-
-//   @media (max-width: ($bp-tablet - 1px)) {
-//     &__item:nth-child(5) &__name {
-//       margin-top: 8px;
-//     }
-//   }
-
-//   // 768
-//   @media (min-width: $bp-tablet) {
-//     padding-block: 64px;
-
-//     &__title {
-//       font-size: 40px;
-//       line-height: 1.2;
-//       margin-bottom: 20px;
-//     }
-
-//     &__lead {
-//       max-width: 56ch;
-//       margin-bottom: 56px;
-//     }
-
-//     &__list {
-//       display: grid;
-//       grid-template-columns: repeat(2, minmax(0, 1fr));
-//       gap: 32px;
-//     }
-
-//     &__card {
-//       gap: 20px;
-//     }
-
-//     &__name {
-//       line-height: 1.25;
-//       margin-bottom: 18px;
-//     }
-//   }
-
-//   // 1024
-//   @media (min-width: $bp-laptop-md) {
-//     padding-block: 90px;
-
-//     &__title {
-//       max-width: 646px;
-//       margin-bottom: 16px;
-
-//       font-size: 48px;
-//       line-height: 1.16667;
-//       letter-spacing: -0.02em;
-//     }
-
-//     &__lead {
-//       max-width: 646px;
-//       margin-bottom: 68px;
-//     }
-
-//     &__card {
-//       padding: 20px;
-//       gap: 25px;
-//       min-height: 204px;
-//     }
-//   }
-
-//   // 1440
-//   @media (min-width: $bp-laptop) {
-//     padding-block: 110px;
-
-//     &__lead {
-//       margin-bottom: 48px;
-//       line-height: 1.9;
-//     }
-
-//     &__list {
-//       grid-template-columns: repeat(3, minmax(0, 1fr));
-//       gap: 32px;
-//     }
-
-//     &__icon--sm,
-//     &__desc-text--sm,
-//     &__lead-text--sm {
-//       display: none;
-//     }
-
-//     &__icon--lg {
-//       display: block;
-//     }
-
-//     &__desc-text--lg,
-//     &__lead-text--lg {
-//       display: inline;
-//     }
-//   }
-
-//   // 1920
-//   @media (min-width: $bp-desktop) {
-//     padding-block: 140px;
-
-//     &__inner {
-//       max-width: 1600px;
-//     }
-
-//     &__title {
-//       max-width: 758px;
-//       font-size: 56px;
-//       line-height: 1.14;
-//       margin-bottom: 20px;
-//     }
-
-//     &__lead {
-//       max-width: 72ch;
-//       font-size: 16px;
-//       line-height: 1.75;
-//       margin-bottom: 64px;
-//     }
-
-//     &__list {
-//       gap: 40px;
-//     }
-
-//     &__card {
-//       padding: 24px;
-//       gap: 28px;
-//       min-height: 220px;
-//       border-radius: 10px;
-//     }
-
-//     &__icon-wrap {
-//       width: 52px;
-//       height: 52px;
-//       flex-basis: 52px;
-//       border-radius: 10px;
-//     }
-
-//     &__name {
-//       font-size: 28px;
-//       line-height: 1.25;
-//       margin-bottom: 18px;
-//     }
-
-//     &__desc {
-//       font-size: 16px;
-//       line-height: 1.75;
-//     }
-//   }
-// }
 // * ========== TRAITS ==========
 
 .traits {
@@ -979,10 +719,18 @@
     padding: 20px;
     border-radius: 8px;
     background: transparent;
-  }
 
-  &__item--active &__card {
-    background: rgba(34, 34, 51, 0.7);
+    transition: background-color 0.25s ease, transform 0.25s ease;
+
+    &:hover {
+      background-color: $color-surface;
+      transform: translateY(-2px);
+    }
+
+    &:hover .about-companies__logo {
+      background-color: $color-accent-dot;
+      color: $color-bg-main;
+    }
   }
 
   &__logo {
@@ -999,11 +747,8 @@
 
     transform: translateY(-5px);
     line-height: 0;
-  }
 
-  &__item--active &__logo {
-    background: $color-accent-dot;
-    color: $color-bg-main;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   &__icon {
@@ -1148,10 +893,6 @@
       padding: 20px;
       gap: 24px;
     }
-
-    &__item--active &__card {
-      background: $color-surface;
-    }
   }
 
   // 1440
@@ -1174,6 +915,10 @@
     &__card {
       width: 100%;
       min-width: 0;
+    }
+
+    &__logo {
+      transform: translateY(-10px);
     }
 
     // 1920
