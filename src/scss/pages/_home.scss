@@ -73,6 +73,12 @@
     }
   }
 
+  &__services {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
   &__service {
     max-width: 350px;
     margin: 0 auto;
@@ -80,14 +86,31 @@
     border-radius: 8px;
     background-color: transparent;
 
-    transition: background-color 0.2s ease;
+    transition: background-color 0.25s ease, transform 0.25s ease;
 
     & + & {
-      margin-top: 35px;
+      margin-top: 30px;
     }
 
+    // ховер по картці
     &:hover {
       background-color: $color-surface;
+      transform: translateY(-2px);
+    }
+
+    &:hover .hero-home__icon {
+      background-color: $color-accent-dot;
+    }
+
+    &:hover .hero-home__icon-svg {
+      fill: $color-bg-main;
+    }
+  }
+
+  // модифікатор залишаємо для логіки (order, letter-spacing), але без фонів
+  &__service--background {
+    .hero-home__service-text {
+      letter-spacing: -0.024em;
     }
   }
 
@@ -103,9 +126,7 @@
 
     margin-bottom: 24px;
 
-    &--green {
-      background-color: $color-accent-dot;
-    }
+    transition: background-color 0.25s ease;
   }
 
   &__icon-svg {
@@ -113,10 +134,7 @@
     width: 13px;
     height: 13px;
     fill: $color-text-main;
-
-    &--square {
-      fill: $color-bg-main;
-    }
+    transition: fill 0.25s ease;
 
     &--letters {
       width: 15px;
@@ -190,7 +208,7 @@
       order: 2;
     }
 
-    .hero-home__service--background {
+    &__service--background {
       order: 3;
     }
   }
@@ -274,7 +292,7 @@
       order: 1;
     }
 
-    .hero-home__service--background {
+    &__service--background {
       order: 2;
       grid-column: auto;
     }
@@ -528,9 +546,7 @@
     }
   }
 }
-
 // * ========== REVIEWS ==========
-
 .reviews {
   padding-block: clamp(45px, 10vw, 64px);
 
@@ -545,12 +561,10 @@
 
   &__title {
     max-width: 18ch;
-
     font-size: 32px;
     line-height: 1.25;
     letter-spacing: -0.01em;
     color: $color-text-main;
-
     margin-bottom: 16px;
   }
 
@@ -575,6 +589,9 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   &__card {
@@ -582,14 +599,23 @@
     --avatar-gap: 24px;
 
     padding: 20px;
-
     display: flex;
     flex-direction: column;
+
+    border-radius: 8px;
+    background: transparent;
+
+    transition: background-color 250ms ease;
+
+    &:hover,
+    &:focus-within {
+      background: $color-surface;
+    }
   }
 
+  // прибрали постійний background у "featured"
   &__card--featured {
-    background: $color-surface;
-    border-radius: 8px;
+    background: transparent;
   }
 
   &__card-head {
@@ -603,7 +629,6 @@
     height: var(--avatar-size);
     border-radius: 50%;
     object-fit: cover;
-
     flex: 0 0 var(--avatar-size);
   }
 
@@ -613,8 +638,7 @@
   }
 
   &__quote-text {
-    margin-bottom: 25px;
-
+    margin: 0 0 25px;
     font-family: "Sora", sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -628,7 +652,6 @@
 
   &__name {
     margin: 0 0 6px;
-
     font-family: "Sora", sans-serif;
     font-weight: 700;
     font-size: 24px;
@@ -640,7 +663,6 @@
 
   &__position {
     margin: 0;
-
     font-family: "Sora", sans-serif;
     font-weight: 400;
     font-size: 12px;
@@ -698,9 +720,14 @@
     }
 
     &__list {
-      max-width: 438px;
+      width: 438px;
       justify-self: start;
       gap: 39px;
+    }
+
+    &__card {
+      width: 100%;
+      box-sizing: border-box;
     }
 
     &__title {
