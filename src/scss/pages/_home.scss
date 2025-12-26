@@ -92,7 +92,6 @@
       margin-top: 30px;
     }
 
-    // ховер по картці
     &:hover {
       background-color: $color-surface;
       transform: translateY(-2px);
@@ -107,7 +106,6 @@
     }
   }
 
-  // модифікатор залишаємо для логіки (order, letter-spacing), але без фонів
   &__service--background {
     .hero-home__service-text {
       letter-spacing: -0.024em;
