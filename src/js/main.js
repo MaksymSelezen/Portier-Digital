@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const openMenu = () => {
     menu.classList.add("mobile-menu--open");
     document.body.classList.add("no-scroll");
+    openBtn.classList.add("header__burger--active");
     openBtn.setAttribute("aria-expanded", "true");
     menu.setAttribute("aria-hidden", "false");
   };
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeMenu = () => {
     menu.classList.remove("mobile-menu--open");
     document.body.classList.remove("no-scroll");
+    openBtn.classList.remove("header__burger--active");
     openBtn.setAttribute("aria-expanded", "false");
     menu.setAttribute("aria-hidden", "true");
   };

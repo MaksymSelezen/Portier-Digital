@@ -161,9 +161,27 @@ body {
     align-items: center;
     justify-content: center;
 
+    transition: transform 0.25s ease, background-color 0.25s ease;
+    border-radius: 8px;
+    padding: 4px;
+
     &-icon {
       width: 26px;
       height: 18px;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    &:active {
+      transform: scale(0.94);
+    }
+
+    &--active {
+      background-color: rgba(255, 255, 255, 0.06);
+      transform: rotate(90deg);
+
+      .header__burger-icon {
+        transform: scale(1.05);
+      }
     }
   }
 
@@ -280,16 +298,28 @@ body {
   }
 }
 
+// * ========== MOBILE MENU ==========
+
 .mobile-menu {
   position: fixed;
   inset: 0;
   z-index: 1000;
 
-  display: none;
+  display: block;
   background-color: rgba(5, 5, 15, 0.98);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.45s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1),
+    visibility 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
 
   &--open {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 
   &__backdrop {
@@ -305,6 +335,13 @@ body {
     flex-direction: column;
 
     padding: 24px 16px 32px;
+
+    transform: translateY(12px);
+    transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  &--open &__content {
+    transform: translateY(0);
   }
 
   &__close {
@@ -320,6 +357,17 @@ body {
 
     color: $color-text-main;
     background-color: rgba(255, 255, 255, 0.06);
+
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      background-color: rgba(255, 255, 255, 0.12);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
   }
 
   &__nav {
@@ -356,6 +404,17 @@ body {
     color: $color-text-main;
 
     background: $color-surface;
+
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      background-color: lighten($color-surface, 4%);
+    }
+
+    &:active {
+      transform: scale(0.97);
+    }
   }
 
   @media (min-width: $bp-tablet) {
@@ -367,7 +426,6 @@ body {
 }
 
 // * ========== PROJECTS ==========
-
 .projects {
   &__container {
     padding-block: 45px;
@@ -392,6 +450,18 @@ body {
   &__card-link {
     position: relative;
     display: block;
+
+    &:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.5);
+      outline-offset: 4px;
+      border-radius: 8px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
   &__card-meta {
@@ -438,6 +508,9 @@ body {
     border-radius: 8px;
     background-color: $color-surface;
 
+    transition: background-color 200ms ease, transform 200ms ease,
+      box-shadow 200ms ease;
+
     &--green {
       background-color: $color-accent-dot;
 
@@ -445,12 +518,19 @@ body {
         stroke: $color-bg-main;
       }
     }
+
+    &:hover,
+    &:focus-visible {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    }
   }
 
   &__card-btn-icon {
     width: 9px;
     height: 9px;
     stroke: $color-text-main;
+    transition: stroke 200ms ease, transform 200ms ease;
   }
 
   // 768
@@ -911,41 +991,66 @@ body {
   }
 
   &__social-link {
-    width: 32px;
-    height: 32px;
+    --size: 32px;
+    --icon: 20px;
+
+    width: var(--size);
+    height: var(--size);
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 50px;
+    border-radius: 999px;
+    background-color: transparent;
     color: $color-text-main;
 
-    transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease,
+      box-shadow 0.2s ease, opacity 0.2s ease;
+    will-change: transform;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.08);
+      background-color: rgba(255, 255, 255, 0.16);
+      color: $color-accent-dot;
+      transform: translateY(-1px) scale(1.06);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+    }
+
+    &:active {
+      transform: translateY(0) scale(1.02);
+      opacity: 0.96;
     }
 
     &:focus-visible {
-      outline: 2px solid rgba(255, 255, 255, 0.5);
-      outline-offset: 4px;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.55),
+        0 10px 24px rgba(0, 0, 0, 0.28);
     }
 
     &--active {
       background-color: $color-accent-dot;
       color: $color-surface;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
 
       &:hover {
-        opacity: 0.9;
-        background-color: $color-accent-dot;
+        background-color: darken($color-accent-dot, 6%);
+        color: $color-surface;
+        transform: translateY(-1px) scale(1.06);
+        box-shadow: 0 0 0 3px rgba(87, 239, 180, 0.35),
+          0 14px 30px rgba(0, 0, 0, 0.34);
+      }
+
+      &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6),
+          0 0 0 6px rgba(87, 239, 180, 0.35), 0 14px 30px rgba(0, 0, 0, 0.34);
       }
     }
   }
 
   &__social-icon {
-    width: 20px;
-    height: 20px;
+    width: var(--icon);
+    height: var(--icon);
     fill: currentColor;
     stroke: currentColor;
   }
@@ -1065,13 +1170,8 @@ body {
     }
 
     &__social-link {
-      width: 40px;
-      height: 40px;
-    }
-
-    &__social-icon {
-      width: 24px;
-      height: 24px;
+      --size: 40px;
+      --icon: 24px;
     }
   }
 }
