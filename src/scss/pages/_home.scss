@@ -99,10 +99,7 @@
 
     &:hover .hero-home__icon {
       background-color: $color-accent-dot;
-    }
-
-    &:hover .hero-home__icon-svg {
-      fill: $color-bg-main;
+      color: $color-bg-main;
     }
   }
 
@@ -117,6 +114,7 @@
     height: 44px;
     border-radius: 8px;
     background-color: $color-surface;
+    color: $color-text-main;
 
     display: inline-flex;
     align-items: center;
@@ -124,14 +122,15 @@
 
     margin-bottom: 24px;
 
-    transition: background-color 0.25s ease;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   &__icon-svg {
     display: block;
     width: 13px;
     height: 13px;
-    fill: $color-text-main;
+    fill: currentColor;
+
     transition: fill 0.25s ease;
 
     &--letters {
