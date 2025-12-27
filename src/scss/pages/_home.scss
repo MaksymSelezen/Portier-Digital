@@ -610,7 +610,6 @@
     }
   }
 
-  // прибрали постійний background у "featured"
   &__card--featured {
     background: transparent;
   }
@@ -1054,7 +1053,7 @@
     margin-bottom: 16px;
   }
 
-  // 768+
+  // 768
   @media (min-width: $bp-tablet) {
     padding-block: 64px;
 
@@ -1096,7 +1095,7 @@
     }
   }
 
-  // 1024+
+  // 1024
   @media (min-width: $bp-laptop-md) {
     padding-block: 90px;
 
@@ -1139,7 +1138,7 @@
     }
   }
 
-  // 1440+
+  // 1440
   @media (min-width: $bp-laptop) {
     padding-block: 120px;
 
